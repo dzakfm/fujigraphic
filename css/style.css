@@ -1,0 +1,187 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.hero-section {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header Styling */
+.hero-section {
+    position: absolute;
+    top: 20px; /* Atur posisi ke atas */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 2; /* Pastikan di atas slide */
+    background: rgba(0, 0, 0, 0.5); /* Tambahkan transparansi */
+    padding: 15px 30px;
+    border-radius: 10px;
+}
+
+/* Agar teks tetap terlihat meskipun di atas gambar */
+.hero-section h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.hero-section p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff4444;
+}
+
+/* Styling Slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Tombol Next & Prev */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Indikator Titik */
+.dots-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Animasi Fade */
+.fade {
+    animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero-image img {
+    max-width: 300px;
+    margin-top: 20px;
+}
+
+.clients img {
+    width: 50px;
+    margin: 10px;
+    opacity: 0.8;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.clients img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+/* Styling untuk teks dan panah */
+.info-text {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Styling untuk panah agar bisa diklik */
+.arrow {
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.accordion-button .arrow {
+    display: none;
+}
+
+/* Styling untuk textbox informasi */
+.info-box {
+    display: none; /* Awalnya tersembunyi */
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    max-width: 400px;
+}
+
+#faq h1 {
+    margin-top: 60px;
+}
+
+#faq .accordion-button {
+    font-weight: bold;
+}
+
+#faq .accordion-button:not(.collapsed) {
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+
+footer {
+    background-color: #212529;
+    color: white;
+    padding: 20px 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
