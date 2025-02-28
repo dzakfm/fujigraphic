@@ -7,6 +7,10 @@
     <title>Fuji Graphic Jakarta</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -52,6 +56,33 @@
             <p>Teknisi yang dapat diandalkan dengan training yang berkelanjutan dan sangat terlatih selalu memberikan pelayanan service yang terbaik dan memastikan mesin dalam kondisi prima.</p>
 
             <p>Dengan segala reputasinya maka Fujigraphic telah dipercaya oleh ratusan customer kami yang tersebar di kota kota besar seperti Jakarta Bekasi Cikarang Karawang dan Surabaya. Jangan pernah ragu untuk mempercayakan pengelolaan document anda kepada Fujigraphic.</p>
+        </div>
+        <h4 class="text-center mb-5 mt-5">List Cabang</h4>
+        <div class="container" id="map" style="height: 500px;">
+            <script>
+                // Koordinat cabang
+                var locations = [
+                    {lat: -6.2088, lng: 106.8456, name: "Cabang Jakarta"},
+                    {lat: -7.2504, lng: 112.7688, name: "Cabang Surabaya"},
+                    {lat: -6.9175, lng: 107.6191, name: "Cabang Bandung"}
+                ];
+              
+                // Inisialisasi peta di lokasi tengah Indonesia
+                var map = L.map('map').setView([-6.5, 107.5], 6);
+              
+                // Tambahkan Tile Layer dari OpenStreetMap
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; OpenStreetMap contributors'
+                }).addTo(map);
+              
+                // Tambahkan Marker untuk setiap lokasi
+                locations.forEach(function(location) {
+                    L.marker([location.lat, location.lng])
+                      .addTo(map)
+                      .bindPopup("<b>" + location.name + "</b>")
+                      .openPopup();
+                });
+              </script>              
         </div>
     </section>
             
