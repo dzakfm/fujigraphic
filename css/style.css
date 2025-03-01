@@ -359,7 +359,8 @@ body {
 
 /* Styling untuk textbox informasi */
 .info-box {
-    display: none; /* Awalnya tersembunyi */
+    display: none;
+    /* Awalnya tersembunyi */
     margin-top: 10px;
     padding: 10px;
     border: 1px solid #ccc;
