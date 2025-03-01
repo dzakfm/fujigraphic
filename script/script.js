@@ -1,23 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Website Fuji Graphic Jakarta siap digunakan!");
 
-    // Memuat navbar dan footer
-    function loadComponent(id, file) {
-        fetch("../components/" + file) // Sesuaikan path dengan struktur folder
+    function loadComponent(url, targetId) {
+        fetch(url)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`Gagal memuat ${file}, status: ${response.status}`);
+                    throw new Error(`Gagal memuat ${url}, status: ${response.status}`);
                 }
                 return response.text();
             })
             .then(data => {
-                document.getElementById(id).innerHTML = data;
+                document.getElementById(targetId).innerHTML = data;
             })
-            .catch(error => console.error("Error:", error));
+            .catch(error => console.error(`Error loading ${url}:`, error));
     }
 
-    loadComponent("navbar", "navbar.html");
-    loadComponent("footer", "footer.html");
+    // Panggil fungsi untuk load navbar dan footer
+    loadComponent("components/navbar.html", "navbar-container");
+    loadComponent("components/footer.html", "footer-container");
 
     // Efek hover pada navbar
     const navbarLinks = document.querySelectorAll(".navbar-nav .nav-link");
