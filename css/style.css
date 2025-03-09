@@ -148,13 +148,6 @@ body {
     color: #555;
 }
 
-/* Produk Kami */
-.products {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #f8f9fa;
-}
-
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -261,6 +254,18 @@ body {
     max-width: 900px;
     /* Lebar maksimum */
     margin: auto;
+    /* Pusatkan */
+    overflow: hidden;
+    /* Hindari scroll horizontal */
+    padding: 20px 0;
+}
+
+/* Pastikan produk ada dalam satu baris */
+.product-container-artikel {
+    position: relative;
+    max-width: 900px;
+    /* Lebar maksimum */
+    margin: 40px auto;
     /* Pusatkan */
     overflow: hidden;
     /* Hindari scroll horizontal */
