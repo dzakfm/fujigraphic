@@ -10,6 +10,4 @@ Route::get('/', function () {
 
 Route::get('/faq', [PageController::class, 'faq'])->name('faq');
 
-
-
-
+Route::get('/profile', [PageController::class, 'profile'])->name('profile');
