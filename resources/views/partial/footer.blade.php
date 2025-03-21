@@ -45,7 +45,7 @@
             <div class="col-md-4">
                 <h5>Company1</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-white text-decoration-none">About us</a></li>
+                    <li><a href="{{ route('profile') }}" class="text-white text-decoration-none">About us</a></li>
                     <li><a href="#" class="text-white text-decoration-none">Blog</a></li>
                     <li><a href="#" class="text-white text-decoration-none">Contact us</a></li>
                     <li><a href="#" class="text-white text-decoration-none">Pricing</a></li>

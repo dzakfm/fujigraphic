@@ -12,6 +12,7 @@ Route::get('/', function () {
 
 Route::get('/faq', [PageController::class, 'faq'])->name('faq');
 
+
 Route::get('/product', [ProductController::class, 'product'])->name('product');
 
 // routes/web.php
@@ -24,4 +25,5 @@ Route::put('/admin/category/{id}', [AdminController::class, 'updateCategory'])->
 Route::put('/admin/product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateProduct');
 
 
+Route::get('/profile', [PageController::class, 'profile'])->name('profile');
 

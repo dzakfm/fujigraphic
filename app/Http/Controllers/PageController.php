@@ -21,8 +21,8 @@ class PageController extends Controller
         return view('detail-produk');
     }
 
-    public function tentang()
+    public function profile()
     {
-        return view('tentang');
+        return view('profile');
     }
 }
