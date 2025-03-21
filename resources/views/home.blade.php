@@ -26,18 +26,14 @@
 
         <!-- Gambar Slide -->
         <div class="slide fade">
-            <img src="./images/banner/banner-1.jpg" alt="Gambar 1">
+        <img src="{{ asset('images/banner/banner-1.jpg') }}" alt="Gambar 1">
         </div>
         <div class="slide fade">
-            <img src="./images/banner/banner-2.jpg" alt="Gambar 2">
+        <img src="{{ asset('images/banner/banner-2.jpg') }}" alt="Gambar 2">
         </div>
         <div class="slide fade">
-            <img src="./images/banner/banner-3.jpg" alt="Gambar 3">
+        <img src="{{ asset('images/banner/banner-3.jpg') }}" alt="Gambar 3">
         </div>
-
-        <!-- Tombol Next/Prev -->
-        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-        <a class="next" onclick="changeSlide(1)">&#10095;</a>
 
         <!-- Indikator Titik -->
         <div class="dots-container">
@@ -136,7 +132,6 @@
     </section>
     <div class="product-container">
         <h1>Produk Kami</h1>
-        <button class="prev">❮</button>
         <div class="product-wrapper">
             <div class="product-card">
                 <img src="product1.jpg" alt="Fuji Xerox DC IV 4070">
@@ -159,12 +154,10 @@
                 <p>Read more →</p>
             </div>
         </div>
-        <button class="next">❯</button>
     </div>
 
     <div class="product-container-artikel">
         <h1>Artikel</h1>
-        <button class="prev">❮</button>
         <div class="product-wrapper">
             <div class="product-card">
                 <img src="product1.jpg" alt="Fuji Xerox DC IV 4070">
@@ -187,7 +180,6 @@
                 <a href="">Read more →</a>
             </div>
         </div>
-        <button class="next"></button>
     </div>
 
     <div id="footer-container"></div>
