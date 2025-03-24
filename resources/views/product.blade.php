@@ -12,7 +12,7 @@
   @include('partial.navbar')
 
   <main class="container my-5">
-    <h1 class="text-center mb-5">PRODUK KAMI</h1>
+    <h1 class="text-center mb-5 mt-5">PRODUK KAMI</h1>
 
     {{-- Loop kategori --}}
     @forelse($categories as $category)
