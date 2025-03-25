@@ -12,35 +12,28 @@
   @include('partial.navbar')
 
   <main class="container my-5">
-    <h1 class="text-center mb-5 mt-5">PRODUK KAMI</h1>
+    <h1 class="text-center mb-5 mt-5">Artikel</h1>
 
-    {{-- Loop kategori --}}
-    @forelse($categories as $category)
+    @forelse($artikels as $artikel)
       <section class="mb-5">
-        <h2 class="mb-4 text-success">{{ $category->name }}</h2>
+        <h2 class="mb-4 text-success">
 
         <div class="row">
-          {{-- Loop produk --}}
-          @forelse($category->products as $product)
             <div class="col-md-4 mb-4">
               <div class="card h-100 text-center p-3">
-                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                <img src="{{ asset('storage/' . $artikel->image) }}" alt="{{ $artikel->title }}" class="card-img-top" style="height: 200px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">{{ $product->name }}</h5>
-                  <p class="card-text">{{ $product->specifications }}</p>
+                  <h5 class="card-title">{{ $artikel->title }}</h5>
+                  <p class="card-text">{{ $artikel->content }}</p>
                 </div>
               </div>
             </div>
           @empty
-            <p class="text-muted">Belum ada produk di kategori ini.</p>
+          <p class="text-center">Belum ada artikel tersedia.</p>
           @endforelse
         </div>
       </section>
-    @empty
-      <p class="text-center">Belum ada kategori tersedia.</p>
-    @endforelse
-  </main>
-
+</main>
   @include('partial.footer')
 
   <script src="{{ asset('script/script.js') }}"></script>

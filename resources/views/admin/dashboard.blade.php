@@ -1,8 +1,5 @@
-{{-- resources/views/admin/dashboard.blade.php --}}
-
 <div class="container">
 
-  {{-- Form Tambah Kategori --}}
   <h2>Kategori</h2>
   <form action="{{ route('admin.storeCategory') }}" method="POST">
     @csrf
@@ -27,7 +24,6 @@
     @endforeach
   </ul>
 
-  {{-- Form Tambah Produk --}}
   <h2>Produk</h2>
   <form action="{{ route('admin.storeProduct') }}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -70,3 +66,31 @@
   @endforeach
 
 </div>
+<h2>Artikel</h2>
+<form action="{{ route('admin.storeArticle') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <input type="text" name="title" placeholder="Judul Artikel" required>
+    <textarea name="content" placeholder="Konten" required></textarea>
+    <input type="file" name="image">
+    <button type="submit">Tambah Artikel</button>
+</form>
+
+<ul>
+    @foreach($artikels as $article)
+        <li>
+            <form action="{{ route('admin.updateArticle', $article->id) }}" method="POST" enctype="multipart/form-data">
+                @csrf @method('PUT')
+                <input type="text" name="title" value="{{ $article->title }}">
+                <textarea name="content">{{ $article->content }}</textarea>
+                <input type="file" name="image">
+                <button type="submit">Edit</button>
+            </form>
+
+            <form action="{{ route('admin.deleteArticle', $article->id) }}" method="POST">
+                @csrf @method('DELETE')
+                <button type="submit">Hapus</button>
+            </form>
+        </li>
+    @endforeach
+</ul>
+

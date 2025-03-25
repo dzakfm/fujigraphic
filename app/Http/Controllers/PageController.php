@@ -16,10 +16,6 @@ class PageController extends Controller
         return view('faq');
     }
 
-    public function detailProduk()
-    {
-        return view('detail-produk');
-    }
 
     public function profile()
     {
