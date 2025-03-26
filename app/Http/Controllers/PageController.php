@@ -21,4 +21,8 @@ class PageController extends Controller
     {
         return view('profile');
     }
+    public function contact()
+    {
+        return view('contact');
+    }
 }

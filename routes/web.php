@@ -18,6 +18,8 @@ Route::get('/product', [ProductController::class, 'product'])->name('product');
 
 Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel');
 
+Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+
 // routes/web.php
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 Route::post('/admin/category', [AdminController::class, 'storeCategory'])->name('admin.storeCategory');
@@ -29,6 +31,10 @@ Route::put('/admin/product/{id}', [AdminController::class, 'updateProduct'])->na
 Route::post('/admin/article', [AdminController::class, 'storeArticle'])->name('admin.storeArticle');
 Route::put('/admin/article/{id}', [AdminController::class, 'updateArticle'])->name('admin.updateArticle');
 Route::delete('/admin/article/{id}', [AdminController::class, 'deleteArticle'])->name('admin.deleteArticle');
+Route::post('/contact', [AdminController::class, 'storeContact']);
+Route::delete('/admin/contacts/{id}', [AdminController::class, 'destroyContact'])->name('contacts.destroy');
+
+
 
 
 

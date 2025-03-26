@@ -427,3 +427,58 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/* contact*/
+/* Container utama */
+.contact-container {
+    max-width: 800px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Row untuk membuat sejajar */
+.contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    /* Jarak antara judul dan tabel */
+}
+
+/* Judul */
+.contact-title {
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap;
+    /* Agar tidak turun ke bawah */
+}
+
+/* Tabel */
+.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-left: 70px;
+}
+
+/* Label (Nama kolom) */
+.contact-label {
+    font-weight: bold;
+    padding: 5px;
+    width: 30%;
+}
+
+/* Nilai (Isi kontak) */
+.contact-value {
+    padding: 5px;
+    width: 70%;
+}
+
+/* Link */
+.contact-link {
+    text-decoration: none;
+    color: black;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+    color: blue;
+}

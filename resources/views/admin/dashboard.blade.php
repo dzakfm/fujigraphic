@@ -94,3 +94,36 @@
     @endforeach
 </ul>
 
+<h2>Daftar Pesan Pengunjung</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Telepon</th>
+            <th>Pesan</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($contacts as $key => $contact)
+        <tr>
+            <td>{{ $key + 1 }}</td>
+            <td>{{ $contact->nama }}</td>
+            <td>{{ $contact->email }}</td>
+            <td>{{ $contact->telepon }}</td>
+            <td>{{ $contact->pesan }}</td>
+            <td>
+                <form action="{{ url('/admin/contacts/'.$contact->id) }}" method="POST" onsubmit="return confirm('Hapus pesan ini?')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+
+

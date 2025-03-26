@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Artikel;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -12,8 +13,11 @@ class AdminController extends Controller
     public function index() {
         $categories = Category::with('products')->get();
         $artikels = Artikel::all();
-        return view('admin.dashboard', compact('categories', 'artikels'));
+        $contacts = Contact::latest()->get(); // Ambil semua data kontak
+    
+        return view('admin.dashboard', compact('categories', 'artikels', 'contacts'));
     }
+    
 
     public function storeCategory(Request $request) {
         $request->validate(['name' => 'required']);
@@ -122,5 +126,30 @@ class AdminController extends Controller
     return back();
     }
 
+    public function storeContact(Request $request) {
+    
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'email' => 'required|email',
+            'telepon' => 'required|string|max:15',
+            'pesan' => 'required|string',
+        ]);
+    
+        Contact::create([
+            'nama' => $request->nama,
+            'email' => $request->email,
+            'telepon' => $request->telepon,
+            'pesan' => $request->pesan,
+        ]);
+    
+        return redirect()->back()->with('success', 'Pesan berhasil dikirim!');
+    }
 
+    public function destroyContact($id) {
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+    
+        return redirect()->back()->with('success', 'Pesan berhasil dihapus!');
+    }
+    
 }
