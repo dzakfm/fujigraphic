@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArtikelController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminAuthController;
 
 // Halaman utama
 Route::get('/', function () {
@@ -33,6 +34,19 @@ Route::put('/admin/article/{id}', [AdminController::class, 'updateArticle'])->na
 Route::delete('/admin/article/{id}', [AdminController::class, 'deleteArticle'])->name('admin.deleteArticle');
 Route::post('/contact', [AdminController::class, 'storeContact']);
 Route::delete('/admin/contacts/{id}', [AdminController::class, 'destroyContact'])->name('contacts.destroy');
+
+//login Admin
+Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminAuthController::class, 'login']);
+Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+
+Route::get('/login', function () {
+    return redirect('/admin/login');
+})->name('login');
+
+Route::get('/admin/dashboard', [AdminController::class, 'index'])
+    ->middleware('auth:admin')
+    ->name('admin.dashboard');
 
 
 
