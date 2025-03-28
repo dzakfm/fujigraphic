@@ -65,18 +65,21 @@
                 maupun Faximile sekaligus sesuai dengan kebutuhan kantor anda.</p>
         </div>
         <h4 class="text-center mb-5 mt-5">List Cabang</h4>
-        <div class="container d-flex justify-content-between">
+        <div class="container">
+            <div class="container-sidebar d-flex justify-content-between">
                     <!-- Sidebar untuk daftar cabang -->
-            <div class="branch-list" style="width: 40%; padding-right: 10px;">
-                <h5>Daftar Cabang</h5>
-                <ul id="branch-menu" style="list-style: none; padding: 0;">
+                <div class="branch-list" style="width: 40%; padding-right: 10px;">
+                    <h5>Daftar Cabang</h5>
+                    <ul id="branch-menu" style="list-style: none; padding: 0;">
                      <!-- List cabang akan dibuat dari JS -->
-                </ul>
+                    </ul>
                 <div id="branch-details" style="display: none; padding: 10px; border: 1px solid #ccc; margin-top: 10px;">
                     <h5 id="branch-name"></h5>
-                    <p id="branch-address"></p>
+                    <p><strong>Melayani Area:</strong> <span id="branch-description"></span></p>
+                    <p><strong>Alamat:</strong> <span id="branch-address"></span></p>
                     <p><strong>Kontak:</strong> <span id="branch-contact"></span></p>
                     <p><strong>Email:</strong> <span id="branch-email"></span></p>
+                    <p><strong>Website:</strong> <span id="branch-website"></span></p>
                 </div>
             </div>
             <div id="map-container" style="width: 60%; display: flex; justify-content: flex-end;">
@@ -89,6 +92,7 @@
             <!-- Panggil file JavaScript -->
             <script src="{{ asset('script/map.js') }}"></script>
             </div>
+        </div>
         </div>
     </section>
     <div id="footer-container"></div>

@@ -27,27 +27,27 @@
             { name: "Fujigraphic Pusat Bekasi", 
                 lat: -6.2462794, 
                 lng: 107.04157, 
-                description: "Melayani area : Bekasi, Cikarang, Cibitung & Karawang",  
+                description: "Bekasi, Cikarang, Cibitung & Karawang",  
                 address: "Graha Taman Kebayoran, Jl. Cipaku 1 No 11, Graha Taman Kebayoran Bekasi Timur", 
-                contact: "Telp. (021) 35175 3501, 0878 7907 8003", 
+                contact: "(021) 35175 3501, 0878 7907 8003", 
                 email: "fujigraphic@rentalfotocopy.id", 
                 website: "www.rentalfotocopy.id"
             }, 
             { name: "Fujigraphic Service Point Jakarta", 
                 lat: -6.2668478, 
                 lng: 106.9244777, 
-                description: "Melayani area : Jakarta, Depok, Tangerang & Bogor",
+                description: "Jakarta, Depok, Tangerang & Bogor",
                 address: "Jatibening Baru, Bekasi, West Java", 
-                contact: "Telp. (021) 35175 3501, 0878 7907 8003", 
+                contact: "(021) 35175 3501, 0878 7907 8003", 
                 email: "bagus@fujigraphic.co.id", 
                 website: "www.jakartacopy.com"
             },
             { name: "Fujigraphic Cabang Surabaya", 
                 lat: -7.2368229, 
                 lng: 112.6339187, 
-                description: "Melayani area : Surabaya, Sidoarjo & Gresik",
+                description: "Surabaya, Sidoarjo & Gresik",
                 address: "Palm Residence – The Green Tamansari G-27 SURABAYA 60198",
-                contact: "Telp. 0812 3180 3223", 
+                contact: "0812 3180 3223", 
                 email: "yan@fujigraphic.co.id", 
                 website: "www.surabayacopy.com"
             }
@@ -71,9 +71,11 @@
         // Fungsi menampilkan detail cabang
         function showBranchDetails(branch) {
             document.getElementById("branch-name").textContent = branch.name;
-            document.getElementById("branch-address").textContent = `Alamat: ${branch.address}`;
+            document.getElementById("branch-description").textContent = branch.description;
+            document.getElementById("branch-address").textContent = branch.address;
             document.getElementById("branch-contact").textContent = branch.contact;
             document.getElementById("branch-email").textContent = branch.email;
+            document.getElementById("branch-website").textContent = branch.website;
 
         // Tampilkan detail
             document.getElementById("branch-details").style.display = "block";
@@ -86,5 +88,6 @@
             L.marker([branch.lat, branch.lng]).addTo(map)
                 .bindPopup(`<b>${branch.name}</b><br>${branch.address}`);
         });
+        
     });
 
