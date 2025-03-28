@@ -7,9 +7,7 @@
     <title>Fuji Graphic Jakarta</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- Leaflet JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 
@@ -67,46 +65,30 @@
                 maupun Faximile sekaligus sesuai dengan kebutuhan kantor anda.</p>
         </div>
         <h4 class="text-center mb-5 mt-5">List Cabang</h4>
-        <div class="container" id="map" style="height: 500px;">
-            <script>
-                // Koordinat cabang
-                var locations = [
-                    { lat: -6.246007413994858, lng: 107.04406711446248, name: "Fujigraphic Kantor Pusat - Jl. Cipaku 1 No 11, Perum Graha Taman Kebayoran Bekasi Timur" },
-                    { lat: -6.2088, lng: 106.8456, name: "Fujigraphic Jakarta" },
-                    { lat: -6.9175, lng: 107.6191, name: "Fujigraphic Surabaya" }
-                ];
+        <div class="container d-flex justify-content-between">
+                    <!-- Sidebar untuk daftar cabang -->
+            <div class="branch-list" style="width: 40%; padding-right: 10px;">
+                <h5>Daftar Cabang</h5>
+                <ul id="branch-menu" style="list-style: none; padding: 0;">
+                     <!-- List cabang akan dibuat dari JS -->
+                </ul>
+                <div id="branch-details" style="display: none; padding: 10px; border: 1px solid #ccc; margin-top: 10px;">
+                    <h5 id="branch-name"></h5>
+                    <p id="branch-address"></p>
+                    <p><strong>Kontak:</strong> <span id="branch-contact"></span></p>
+                    <p><strong>Email:</strong> <span id="branch-email"></span></p>
+                </div>
+            </div>
+            <div id="map-container" style="width: 60%; display: flex; justify-content: flex-end;">
+                <div id="map" style="width: 500px; height: 300px;"></div>
 
-                // Inisialisasi peta di lokasi tengah Indonesia
-                var map = L.map('map').setView([-6.5, 107.5], 6);
+            <!-- Tambahkan Leaflet.js -->
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-                // Tambahkan Tile Layer dari OpenStreetMap
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; OpenStreetMap contributors'
-                }).addTo(map);
-
-                // Tambahkan Marker untuk setiap lokasi
-                locations.forEach(function (location) {
-                    L.marker([location.lat, location.lng])
-                        .addTo(map)
-                        .bindPopup("<b>" + location.name + "</b>")
-                        .openPopup();
-                });
-              </script>
-        <div class="container">
-            <p>
-                1. Fujigraphic Kantor Pusat
-                <span class="arrow" onclick="toggleDescription('desc1', this)">&#9660</span>
-            </p>
-            <p id="desc1" class="description text-center">
-                Melayani area : Bekasi, Cikarang, Cibitung & Karawang</br>
-                Graha Taman Kebayoran,  Jl. Cipaku 1 Blok H No 11 BEKASI 17510</br>
-                Telp. (021) 35175 3501, 0878 7907 8003</br>
-                fujigraphic@rentalfotocopy.id</br>
-                www.rentalfotocopy.id </br>   
-            </p>              
-        </div>
-            </script>
-
+            <!-- Panggil file JavaScript -->
+            <script src="{{ asset('script/map.js') }}"></script>
+            </div>
         </div>
     </section>
     <div id="footer-container"></div>

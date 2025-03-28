@@ -482,3 +482,24 @@ footer a:hover {
     text-decoration: underline;
     color: blue;
 }
+
+/* CSS Map */
+.container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.branch-list {
+    width: 40%;
+}
+
+#map-container {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#map {
+    width: 400px; /* Atur ukuran peta */
+    height: 400px;
+}
