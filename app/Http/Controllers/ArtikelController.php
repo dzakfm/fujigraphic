@@ -11,10 +11,18 @@ class ArtikelController extends Controller
         return view('artikel', compact('artikels'));
     }
 
-    public function showDetail08feb2018($id) {
-        $artikel = Artikel::findOrFail($id);
-        return view('detailArtikel.detail08feb2018', compact('artikel'));
-    }
-
+    public function showDetail($id) {
+        $detailName = "detail" . $id; // Misalnya: detail1, detail2, dll.
+    
+        if (view()->exists("detailArtikel.$detailName")) {
+            // Ambil artikel dari database berdasarkan ID
+            $artikel = Artikel::findOrFail($id);
+    
+            // Menampilkan halaman sesuai dengan detailName
+            return view("detailArtikel.$detailName", compact('artikel'));
+        } else {
+            abort(404); // Jika view tidak ditemukan, tampilkan error 404
+        }
+    }                                       
 
 }

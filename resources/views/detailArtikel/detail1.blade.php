@@ -19,8 +19,8 @@
         <div class="row">
             <!-- Kolom kiri Tanggal -->
             <div class="col-md-3 text-center">
-                <img src="{{ asset('storage/' . $artikel->image) }}" alt="{{ $artikel->title }}" class="img-fluid">
-                <h5>{{ \Carbon\Carbon::parse($artikel->created_at)->format('d M Y') }}</h5>
+                <img src="{{ asset('storage/' . $artikel->image) }}" class="img-fluid">
+                <h5>08 Februari 2018</h5>
                 <p><i class="fas fa-comments"></i> <span id="comment-count">0</span> Komentar</p>
             </div>
             <!-- Kolom kanan Deskripsi -->

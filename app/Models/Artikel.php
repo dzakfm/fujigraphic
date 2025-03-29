@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Artikel extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'content', 'image'];
+
+    protected $table = 'artikels'; // Nama tabel di database
+    protected $fillable = ['title', 'content', 'image']; // Sesuaikan dengan kolom tabel
 }

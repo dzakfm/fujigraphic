@@ -24,13 +24,16 @@
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title">{{ $artikel->title }}</h5>
                   <p class="card-text">{{ Str::limit($artikel->content, 100) }}</p>
-                  <a href="{{ route('artikel.detail08feb2018', $artikel->id) }}" class="btn btn-primary">Baca Selengkapnya</a>
+                  <a href="{{ route('artikel.detail', ['id' => $artikel->id]) }}" class="btn btn-primary">
+                      Baca Selengkapnya
+                  </a>
                 </div>
               </div>
             </div>
-          @empty
-          <p class="text-center">Belum ada artikel tersedia.</p>
-          @endforelse
+            @empty
+                <p class="text-center">Belum ada artikel tersedia.</p>
+                @endforelse
+            </div>
         </div>
       </section>
 </main>
