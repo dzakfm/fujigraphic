@@ -11,8 +11,10 @@ class ArtikelController extends Controller
         return view('artikel', compact('artikels'));
     }
 
-    public function show($id) {
+    public function showDetail08feb2018($id) {
         $artikel = Artikel::findOrFail($id);
         return view('detailArtikel.detail08feb2018', compact('artikel'));
     }
+
+
 }
