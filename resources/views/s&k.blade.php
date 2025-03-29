@@ -11,8 +11,6 @@
 
 <body>
 @include('partial.navbar')
-    <div id="navbar-container"></div>
-
     <section id="faq" class="py-5">
         <div class="container">
             <h1 class="text-center mb-5 mt-5">Hal Penting yang Perlu Diperhatikan Sebelum Sewa Mesin Fotocopy</h1>
@@ -156,7 +154,6 @@
             </div>
         </div>
     </section>
-    <div id="footer-container"></div>
     @include('partial.footer')
     <script src="script/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>

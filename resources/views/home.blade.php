@@ -12,9 +12,6 @@
 <body>
 
 @include('partial.navbar')
-
-    <div id="navbar-container"></div>
-
     <div class="slideshow-container">
         <!-- Header di atas gambar -->
         <header class="hero-section">
@@ -181,8 +178,6 @@
             </div>
         </div>
     </div>
-
-    <div id="footer-container"></div>
     @include('partial.footer')
     <script src="script/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
