@@ -28,7 +28,7 @@
   <form action="{{ route('admin.storeProduct') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <input type="text" name="name" placeholder="Nama Produk" required>
-    <input type="text" name="specifications" placeholder="Spesifikasi" required>
+    <textarea name="specifications" id="specifications" placeholder="Spesifikasi" required></textarea>
     <select name="category_id" required>
       <option value="">Pilih Kategori</option>
       @foreach($categories as $category)
@@ -151,6 +151,9 @@
 <script>
   // Untuk form tambah artikel
   CKEDITOR.replace('editor');
+
+  // Untuk form tambah produk
+  CKEDITOR.replace('specifications');
 
   // Untuk form edit artikel (loop jika ada banyak artikel)
   @foreach($artikels as $article)
