@@ -70,29 +70,44 @@
 <form action="{{ route('admin.storeArticle') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <input type="text" name="title" placeholder="Judul Artikel" required>
-    <textarea name="content" placeholder="Konten" required></textarea>
+    <textarea name="content" id="editor" placeholder="Konten" required></textarea>
     <input type="file" name="image">
     <button type="submit">Tambah Artikel</button>
 </form>
 
 <ul>
-    @foreach($artikels as $article)
-        <li>
-            <form action="{{ route('admin.updateArticle', $article->id) }}" method="POST" enctype="multipart/form-data">
-                @csrf @method('PUT')
-                <input type="text" name="title" value="{{ $article->title }}">
-                <textarea name="content">{{ $article->content }}</textarea>
-                <input type="file" name="image">
-                <button type="submit">Edit</button>
-            </form>
-
-            <form action="{{ route('admin.deleteArticle', $article->id) }}" method="POST">
-                @csrf @method('DELETE')
-                <button type="submit">Hapus</button>
-            </form>
-        </li>
+<h2>Daftar Artikel</h2>
+<table class="table table-bordered">
+  <thead class="table-light">
+    <tr>
+      <th>No</th>
+      <th>Gambar</th>
+      <th>Judul</th>
+      <th>Konten</th>
+      <th>Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($artikels as $index => $article)
+      <tr>
+        <td>{{ $index + 1 }}</td>
+        <td>
+          <img src="{{ asset('storage/' . $article->image) }}" alt="Gambar Artikel" style="width: 100px; height: auto;">
+        </td>
+        <td>{{ $article->title }}</td>
+        <td>{!! Str::limit($article->content, 100) !!}</td>
+        <td>
+          <a href="{{ route('admin.editArticle', $article->id) }}" class="btn btn-sm btn-warning">Edit</a>
+          <form action="{{ route('admin.deleteArticle', $article->id) }}" method="POST" style="display:inline-block;" onsubmit="return confirm('Yakin hapus artikel ini?')">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+          </form>
+        </td>
+      </tr>
     @endforeach
-</ul>
+  </tbody>
+</table>
 
 <h2>Daftar Pesan Pengunjung</h2>
 <table class="table table-bordered">
@@ -130,4 +145,17 @@
     @csrf
     <button type="submit">Logout</button>
 </form>
+<!-- CKEditor CDN -->
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+
+<script>
+  // Untuk form tambah artikel
+  CKEDITOR.replace('editor');
+
+  // Untuk form edit artikel (loop jika ada banyak artikel)
+  @foreach($artikels as $article)
+    CKEDITOR.replace('editor-{{ $article->id }}');
+  @endforeach
+</script>
+
 

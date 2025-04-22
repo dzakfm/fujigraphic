@@ -105,27 +105,28 @@ class AdminController extends Controller
         return back();
     }
 
-    public function updateArticle(Request $request, $id) {
-    $request->validate([
-        'title' => 'required',
-        'content' => 'required',
-    ]);
+    public function updateArticle(Request $request, $id)
+{
+    $artikel = Artikel::find($id);
 
-    $article = Artikel::find($id);
+    if (!$artikel) {
+        return redirect()->back()->with('error', 'Artikel tidak ditemukan.');
+    }
+
+    $artikel->title = $request->title;
+    $artikel->content = $request->content;
 
     if ($request->hasFile('image')) {
-        $image = $request->file('image')->store('articles', 'public');
-        $article->image = $image;
+        $path = $request->file('image')->store('artikel', 'public');
+        $artikel->image = $path;
     }
 
-    $article->update([
-        'title' => $request->title,
-        'content' => $request->content,
-    ]);
+    $artikel->save();
 
-    return back();
-    }
+    return redirect()->route('admin.dashboard')->with('success', 'Artikel berhasil diperbarui.');
+}
 
+    
     public function storeContact(Request $request) {
     
         $request->validate([
@@ -151,5 +152,11 @@ class AdminController extends Controller
     
         return redirect()->back()->with('success', 'Pesan berhasil dihapus!');
     }
+
+    public function editArticle($id)
+{
+    $artikels = Artikel::findOrFail($id);
+    return view('admin.edit-article', compact('artikels'));
+}
     
 }
