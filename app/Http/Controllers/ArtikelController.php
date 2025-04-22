@@ -17,7 +17,7 @@ class ArtikelController extends Controller
         $artikel = Artikel::findOrFail($id);
 
         // Tampilkan view 'detail.blade.php' dengan data artikel
-        return view('detail', compact('artikel'));
+        return view('detailArtikel', compact('artikel'));
     }                                        
 
 }
