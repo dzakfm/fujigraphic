@@ -38,6 +38,9 @@ Route::delete('/admin/contacts/{id}', [AdminController::class, 'destroyContact']
 //routes artikel
 Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.detailArtikel');
 
+//routes product
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.detailProduct');
+
 //login Admin
 Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
 Route::post('/admin/login', [AdminAuthController::class, 'login']);

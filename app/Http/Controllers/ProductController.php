@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -14,6 +15,15 @@ class ProductController extends Controller
 
         // Kirim data ke view
         return view('product', compact('categories'));
+    }
+
+    public function show($id)
+    {
+        // Ambil artikel berdasarkan ID dari database
+        $product = Product::findOrFail($id);
+
+        // Tampilkan view 'detail.blade.php' dengan data artikel
+        return view('detailProduct', compact('product'));
     }
 }
 
