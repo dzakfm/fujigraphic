@@ -36,6 +36,10 @@ Route::post('/contact', [AdminController::class, 'storeContact']);
 Route::delete('/admin/contacts/{id}', [AdminController::class, 'destroyContact'])->name('contacts.destroy');
 
 //routes artikel
+Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.detail');
+Route::get('/admin/artikel/{id}/edit', [AdminController::class, 'editArticle'])->name('admin.editArticle');
+Route::put('/admin/artikels/{id}', [AdminController::class, 'updateArticle'])->name('admin.updateArticle');
+
 Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.detailArtikel');
 
 //routes product
