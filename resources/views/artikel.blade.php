@@ -24,7 +24,7 @@
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title">{{ $artikel->title }}</h5>
                   <p class="card-text">{{ Str::limit($artikel->content, 100) }}</p>
-                  <a href="{{ route('artikel.detail', ['id' => $artikel->id]) }}" class="btn btn-primary">
+                  <a href="{{ route('artikel.detailArtikel', ['id' => $artikel->id]) }}" class="btn btn-primary">
                       Baca Selengkapnya
                   </a>
                 </div>

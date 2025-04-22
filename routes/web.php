@@ -36,7 +36,7 @@ Route::post('/contact', [AdminController::class, 'storeContact']);
 Route::delete('/admin/contacts/{id}', [AdminController::class, 'destroyContact'])->name('contacts.destroy');
 
 //routes artikel
-Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.detail');
+Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.detailArtikel');
 
 //login Admin
 Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
