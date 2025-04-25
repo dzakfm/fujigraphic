@@ -52,34 +52,39 @@
 <div class="center-wrapper">
 <main class="main-content"> 
    <div class="tabelPengunjung">
-    <h2>Daftar Pesan Pengunjung</h2>
+    <h1>Daftar Artikel</h1>
+    <a href="{{ route('admin.add-article') }}" class="btn btn-sm btn-add">✚ Tambah Artikel</a>
     <table class="table">
       <thead>
         <tr>
             <th>No</th>
-            <th>Nama</th>
-            <th>Email</th>
-            <th>Telepon</th>
-            <th>Pesan</th>
+            <th>Tanggal</th>
+            <th>Gambar</th>
+            <th>Judul</th>
+            <th>Konten</th>
             <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
-        @foreach($contacts as $key => $contact)
-        <tr>
-            <td>{{ $key + 1 }}</td>
-            <td>{{ $contact->nama }}</td>
-            <td>{{ $contact->email }}</td>
-            <td>{{ $contact->telepon }}</td>
-            <td>{{ $contact->pesan }}</td>
-            <td>
-                <form action="{{ url('/admin/contacts/'.$contact->id) }}" method="POST" onsubmit="return confirm('Hapus pesan ini?')">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                </form>
-            </td>
-        </tr>
+        @foreach($artikels as $index => $article)
+            <tr>
+                <td>{{ $index + 1 }}</td>
+                <td></td>
+                <td>
+                    <img src="{{ asset('storage/' . $article->image) }}" alt="Gambar Artikel" style="width: 100px; height: auto;">
+                </td>
+                <td>{{ $article->title }}</td>
+                <td>{!! Str::limit($article->content, 100) !!}</td>
+                <td>
+                    <a href="{{ route('admin.editArticle', $article->id) }}" class="btn btn-sm btn-warning">✏ Edit</a>
+                    <a href="#" class="btn btn-sm btn-danger" onclick="hapusData({{ $article->id }})">🗑 Hapus</a>
+
+                    <form id="form-hapus-{{ $article->id }}" action="{{ route('admin.deleteArticle', $article->id) }}" method="POST" style="display:inline-block;" onsubmit="return confirm('Yakin hapus artikel ini?')">
+                        @csrf
+                        @method('DELETE')
+                    </form>
+                </td>
+            </tr>
         @endforeach
       </tbody>
     </table>
@@ -87,7 +92,11 @@
  </div>
 </div>
 <script>
-  console.log('JS Loaded');
+  function hapusData(id) {
+    if (confirm('Yakin ingin menghapus data ini?')) {
+      document.getElementById('form-hapus-' + id).submit();
+    }
+  }
 </script>
 <script  src="{{ asset('script/admin/admin.js') }}"></script>
 </body>

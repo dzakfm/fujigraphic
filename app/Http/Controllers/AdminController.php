@@ -153,10 +153,19 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Pesan berhasil dihapus!');
     }
 
-    public function editArticle($id)
-{
-    $artikels = Artikel::findOrFail($id);
-    return view('admin.edit-article', compact('artikels'));
-}
+    public function editArticle($id) {
+        $artikels = Artikel::findOrFail($id);
+        return view('admin.edit-article', compact('artikels'));
+    }
     
+    public function artikelList() {
+        $artikels = Artikel::all(); 
+        return view('admin.dArtikel', compact('artikels'));
+    }
+
+    public function artikelAdd() {
+        $artikels = Artikel::all();
+        return view('admin.add-article', compact('artikels'));
+    }
+
 }

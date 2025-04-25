@@ -35,6 +35,16 @@ Route::delete('/admin/article/{id}', [AdminController::class, 'deleteArticle'])-
 Route::post('/contact', [AdminController::class, 'storeContact']);
 Route::delete('/admin/contacts/{id}', [AdminController::class, 'destroyContact'])->name('contacts.destroy');
 
+// routes/web dashboard admin
+Route::get('/admin/dProduct', function () { return view('admin.dProduct'); })->name('admin.dProduct');
+Route::get('/admin/dArtikel', [AdminController::class, 'artikelList'])->name('admin.dArtikel');
+Route::get('/admin/add-article', [AdminController::class, 'artikelAdd'])->name('admin.add-article');
+Route::get('/admin/bantuan', function () { return view('admin.bantuan'); })->name('admin.bantuan');
+
+// routes/web Tentang Kami
+Route::get('/profile', [PageController::class, 'profile'])->name('profile');
+
+
 //routes artikel
 Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.detail');
 Route::get('/admin/artikel/{id}/edit', [AdminController::class, 'editArticle'])->name('admin.editArticle');
@@ -57,10 +67,4 @@ Route::get('/login', function () {
 Route::get('/admin/dashboard', [AdminController::class, 'index'])
     ->middleware('auth:admin')
     ->name('admin.dashboard');
-
-
-
-
-
-Route::get('/profile', [PageController::class, 'profile'])->name('profile');
 

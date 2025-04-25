@@ -32,7 +32,7 @@
         </div>
 
         <button type="submit" class="btn btn-success">Update Artikel</button>
-        <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary">Kembali</a>
+        <a href="{{ route('admin.dArtikel') }}" class="btn btn-secondary">Kembali</a>
     </form>
 </div>
 
