@@ -52,7 +52,7 @@
 <div class="center-wrapper">
 <main class="main-content"> 
    <div class="tabelPengunjung">
-    <h2>Daftar Pesan Pengunjung</h2>
+    <h1>Daftar Pesan Pengunjung</h1>
     <table class="table">
       <thead>
         <tr>
