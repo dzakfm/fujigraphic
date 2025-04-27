@@ -14,17 +14,18 @@
 
     <main class="container my-5">
         <div class="row">
-            <!-- Kolom kiri: Gambar & Tanggal -->
+            <!-- Kolom kiri: Gambar -->
             <div class="col-md-3 text-center mb-5 mt-5">
                 <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}" class="img-fluid">
-                <h5>{{ \Carbon\Carbon::parse($product->created_at)->format('d M Y') }}</h5>
-                <p><i class="fas fa-comments"></i> 0 Komentar</p>
             </div>
             <!-- Kolom kanan: Judul & Konten -->
             <div class="col-md-9 mt-md-5">
                 <h2>{{ $product->title }}</h2>
                 <p>{!! $product->specifications !!}</p> <!-- Menjaga format HTML -->
                 <button>Pesan/Hubungi Kami</button>
+            </div>
+            <div class="col-md-9 mt-md-9">
+                <p>Kategori</p>
             </div>
         </div>
         

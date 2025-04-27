@@ -20,7 +20,6 @@
             <div class="col-md-3 text-center mb-5 mt-5">
                 <input type="file" name="image" class="img-fluid"> 
                 <h5><input type="date" name="date"></h5>
-                <p><i class="fas fa-comments"></i> 0 Komentar</p>
             </div>
             <!-- Kolom kanan: Judul & Konten -->
             <div class="col-md-9 mt-md-5">

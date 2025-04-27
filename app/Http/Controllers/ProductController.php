@@ -25,5 +25,12 @@ class ProductController extends Controller
         // Tampilkan view 'detail.blade.php' dengan data artikel
         return view('detailProduct', compact('product'));
     }
+
+    public function detail($id)
+    {
+        $product = Product::findOrFail($id); // Ambil data produk berdasarkan id
+        return view('detailProduct', compact('product'));
+    }
+
 }
 

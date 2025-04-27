@@ -11,13 +11,11 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function index() {
-        $categories = Category::with('products')->get();
         $artikels = Artikel::all();
         $contacts = Contact::latest()->get(); // Ambil semua data kontak
     
-        return view('admin.dashboard', compact('categories', 'artikels', 'contacts'));
+        return view('admin.dashboard', compact('artikels', 'contacts'));
     }
-    
 
     public function storeCategory(Request $request) {
         $request->validate(['name' => 'required']);
@@ -168,4 +166,20 @@ class AdminController extends Controller
         return view('admin.add-article', compact('artikels'));
     }
 
+    public function dProduct() {
+        $categories = Category::with('products')->get();
+        return view('admin.dProduct', compact('categories'));
+    }
+
+    public function editProduct($id) {
+        $product = Product::findOrFail($id);
+        $categories = Category::all();
+        return view('admin.editProduct', compact('product', 'categories'));
+    }
+
+    public function productAdd() {
+        $product = Product::all();
+        $categories = Category::all();
+        return view('admin.add-product', compact('product', 'categories'));
+    }
 }
