@@ -1,43 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Artikel</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-<div class="container mt-5">
-    <h2>Edit Artikel test</h2>
-    
-    <form action="{{ route('admin.updateArticle', $artikels->id) }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
+    <!-- jQuery (required untuk Summernote) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Script Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Summernote JS -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+@include('partial.navbar')
 
-        <div class="mb-3">
-            <label for="title" class="form-label">Judul Artikel</label>
-            <input type="text" class="form-control" name="title" value="{{ $artikels->title }}" required>
-        </div>
-
-        <div class="mb-3">
-            <label for="content" class="form-label">Isi Artikel</label>
-            <textarea name="content" id="editor" class="form-control" rows="5">{{ $artikels->content }}</textarea>
-        </div>
-
-        <div class="mb-3">
-            <label for="image" class="form-label">Gambar</label><br>
-            @if($artikels->image)
+    <main class="container my-5">
+        <form id="form-update-article" action="{{ route('admin.updateArticle', $artikels->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+        <div class="row">
+            <!-- Kolom kiri: Gambar & Tanggal -->
+            <div class="col-md-3 text-center mb-5 mt-5">
+                @if($artikels->image)
                 <img src="{{ asset('storage/' . $artikels->image) }}" width="150" class="mb-2"><br>
-            @endif
-            <input type="file" name="image" class="form-control">
+                @endif
+                <input type="file" name="image" class="img-fluid"> 
+                <p></p>
+                <h5><input type="date" name="date"></h5>
+            </div>
+            <!-- Kolom kanan: Judul & Konten -->
+            <div class="col-md-9 mt-md-5">
+                <h2><input type="text" name="title" value="{{ $artikels->title }}" required></h2>
+                <p><textarea name="content" id="summernote" class="form-control" rows="5">{{ $artikels->content }}</textarea></p> 
+            </div>
+            <div style="float: right; margin-left: auto;" class="col-md-9 mt-md-5"> 
+                <a href="javascript:void(0);" onclick="submitUpdateArticle()" class="btn btn-sm btn-danger d-flex align-items-center justify-content-center px-3" style="float: right; width: auto; height: 3rem; font-size: 16px;">
+                    <strong>Update Artikel</strong>
+                </a>
+            </div>
         </div>
+        </form>
 
-        <button type="submit" class="btn btn-success">Update Artikel</button>
-        <a href="{{ route('admin.dArtikel') }}" class="btn btn-secondary">Kembali</a>
-    </form>
-</div>
+        <a href="{{ route('admin.dArtikel') }}" class="btn btn-secondary mt-4">Kembali</a>
+    </main>
 
+
+@include('partial.footer')
+<script src="{{ asset('script/summernote-init.js') }}"></script>
 <script>
-    CKEDITOR.replace('editor');
+    function submitUpdateArticle() {
+        document.getElementById('form-update-article').submit();
+    }
 </script>
+<script src="{{ asset('script/script.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
-</html>

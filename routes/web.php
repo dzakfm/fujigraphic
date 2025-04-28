@@ -58,6 +58,7 @@ Route::get('/product/{id}', [ProductController::class, 'detail'])->name('product
 
 Route::get('/admin/dProduct', [AdminController::class, 'dProduct'])->name('admin.dProduct');
 Route::get('/admin/product/{id}/edit', [AdminController::class, 'editProduct'])->name('admin.editProduct');
+Route::put('/admin/product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateProduct');
 
 
 //login Admin

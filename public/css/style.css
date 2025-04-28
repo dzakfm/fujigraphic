@@ -410,6 +410,11 @@ main {
     color: #000;
 }
 
+.btn-addKategori {
+    background-color: #28a745;
+    color: #fff;
+    margin-right: 5.2px;
+}
 
 /* Footer */
 footer {

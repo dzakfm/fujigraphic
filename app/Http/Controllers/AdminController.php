@@ -174,7 +174,7 @@ class AdminController extends Controller
     public function editProduct($id) {
         $product = Product::findOrFail($id);
         $categories = Category::all();
-        return view('admin.editProduct', compact('product', 'categories'));
+        return view('admin.edit-product', compact('product', 'categories'));
     }
 
     public function productAdd() {
