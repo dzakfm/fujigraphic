@@ -73,7 +73,7 @@
             <td>{{ $contact->telepon }}</td>
             <td>{{ $contact->pesan }}</td>
             <td>
-                <form action="{{ url('/admin/contacts/'.$contact->id) }}" method="POST" onsubmit="return confirm('Hapus pesan ini?')">
+                <form action="{{ url('/admin/contacts/'.$contact->id) }}" method="POST" onsubmit="return confirm('Hapus Pesan ini?')">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-sm">Hapus</button>

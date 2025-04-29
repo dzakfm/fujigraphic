@@ -95,7 +95,7 @@
 </div>
 <script>
   function hapusData(id) {
-    if (confirm('Yakin ingin menghapus data ini?')) {
+    if (confirm('Yakin ingin menghapus Produk ini?')) {
       document.getElementById('form-hapus-' + id).submit();
     }
   }

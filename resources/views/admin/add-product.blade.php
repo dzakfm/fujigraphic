@@ -31,6 +31,27 @@
                     <a href="javascript:void(0);" class="btn btn-sm btn-success d-flex align-items-center justify-content-center" style="width: 51%; height: 2.1rem; margin-left: 1.8rem;" onclick="submitCategory()"><strong>Tambah Kategori</strong></a>
                 </form>
             </div>
+            <div class="col-md-9">
+                <h5>Daftar Kategori</h5>
+                @foreach($categories as $category)
+                <ul class="list-group mb-3 border-0">
+                    <li class="list-group-item border-0">
+                      <div class="d-flex align-items-center">
+                        <form id="edit-category" action="{{ route('admin.updateCategory', $category->id) }}" method="POST" class="d-flex me-2">
+                        @csrf @method('PUT')
+                            <input type="text" name="name" value="{{ $category->name }}">
+                            <a href="javascript:void(0);" class="btn btn-sm btn-warning ms-3" onclick="editCategory()">✏ Edit</a>
+                        </form>
+
+                        <form id="delete-category" action="{{ route('admin.deleteCategory', $category->id) }}" method="POST" class="d-flex">
+                        @csrf @method('DELETE')
+                            <a href="javascript:void(0);" class="btn btn-sm btn-danger ms-2" onclick="deleteCategory()">🗑 Hapus</a>
+                        </form>
+                      </div>
+                    </li>
+                </ul>
+                @endforeach
+            </div>
         </div>
     </main>
 
@@ -72,9 +93,16 @@
   function submitCategory() {
     document.getElementById('form-add-category').submit();
   }
-
   function submitProduct() {
     document.getElementById('form-add-product').submit();
+  }
+  function editCategory() {
+    document.getElementById('edit-category').submit();
+  }
+  function deleteCategory(id) {
+    if (confirm('Yakin ingin menghapus Kategori ini?')) {
+      document.getElementById('delete-category' + id).submit();
+    }
   }
 </script>
 <script src="{{ asset('script/script.js') }}"></script>
