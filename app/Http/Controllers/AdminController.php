@@ -20,7 +20,7 @@ class AdminController extends Controller
     public function storeCategory(Request $request) {
         $request->validate(['name' => 'required']);
         Category::create(['name' => $request->name]);
-        return back();
+        return back()->with('success', 'Kategori berhasil ditambahkan!');
     }
 
     public function storeProduct(Request $request) {
@@ -40,7 +40,7 @@ class AdminController extends Controller
             'category_id' => $request->category_id,
         ]);
 
-        return back();
+        return back()->with('success3', 'Produk berhasil ditambahkan!');
     }
 
     public function storeArticle(Request $request) {
@@ -48,23 +48,28 @@ class AdminController extends Controller
             'title' => 'required',
             'content' => 'required',
             'image' => 'required|image',
+            'date' => 'nullable|date',
         ]);
 
         $image = $request->file('image') ? $request->file('image')->store('articles', 'public') : null;
+
+        $date = $request->date ?? now();
 
         Artikel::create([
             'title' => $request->title,
             'content' => $request->content,
             'image' => $image,
+            'created_at' => $date,
+            'updated_at' => $date,
         ]);
 
-        return back();
+        return back()->with('success', 'Artikel berhasil ditambahkan!');
     }
 
 
     public function deleteCategory($id) {
         Category::destroy($id);
-        return back();
+        return back()->with('success2', 'Kategori berhasil dihapus!');
     }
 
     public function deleteProduct($id) {
@@ -80,7 +85,7 @@ class AdminController extends Controller
     public function updateCategory(Request $request, $id) {
         $request->validate(['name' => 'required']);
         Category::find($id)->update(['name' => $request->name]);
-        return back();
+        return back()->with('success1', 'Kategori berhasil diperbarui!');
     }
 
     public function updateProduct(Request $request, $id) {
@@ -100,11 +105,11 @@ class AdminController extends Controller
         $product->category_id = $request->category_id;
         $product->save();
 
-        return back();
+        return back()->with('success', 'Produk berhasil diperbarui!');
     }
 
-    public function updateArticle(Request $request, $id)
-{
+    public function updateArticle(Request $request, $id) {
+
     $artikel = Artikel::find($id);
 
     if (!$artikel) {
@@ -119,12 +124,16 @@ class AdminController extends Controller
         $artikel->image = $path;
     }
 
+    $date = $request->date ? $request->date : $artikel->created_at->format('Y-m-d');
+    $artikel->created_at = $date;
+    $artikel->updated_at = now();
+
     $artikel->save();
 
-    return redirect()->route('admin.dashboard')->with('success', 'Artikel berhasil diperbarui.');
-}
+    return redirect()->route('admin.edit-article', $id)->with('success', 'Artikel berhasil diperbarui!');
 
-    
+    }
+
     public function storeContact(Request $request) {
     
         $request->validate([

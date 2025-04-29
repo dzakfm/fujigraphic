@@ -27,19 +27,25 @@
     </main>
     <main class="container my-5">
         <form id="form-add-article" action="{{ route('admin.storeArticle') }}" method="POST" enctype="multipart/form-data">
+            @if(session('success'))
+                <div class="alert alert-success">
+                  {{ session('success') }}
+                </div>
+            @endif
+
             @csrf
         <div class="row">
             <!-- Kolom kiri: Gambar & Tanggal -->
             <div class="col-md-3 mb-5 mt-5">
                 <strong>Masukkan Gambar ⬇️</strong>
-                <input type="file" name="image" class="img-fluid">
+                <input type="file" name="image" class="img-fluid" accept="image/*">
                 <p></p>
                 <strong>Pilih Tanggal ⬇️</strong> 
                 <h5><input type="date" name="date"></h5>
             </div>
             <!-- Kolom kanan: Judul & Konten -->
             <div class="col-md-9 mt-md-5">
-                <h2><input type="text" name="title" placeholder="Judul Artikel" required></h2>
+                <h2><input type="text" name="title" placeholder="Judul Artikel" required class="form-control mb-3"></h2>
                 <p><textarea name="content" id="summernote" required></textarea></p> 
             </div>
             <div style="float: right; margin-left: auto;" class="col-md-9 mt-md-4 mb-5">

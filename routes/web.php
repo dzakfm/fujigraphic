@@ -50,6 +50,8 @@ Route::get('/profile', [PageController::class, 'profile'])->name('profile');
 Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.detail');
 Route::get('/admin/artikel/{id}/edit', [AdminController::class, 'editArticle'])->name('admin.editArticle');
 Route::put('/admin/artikels/{id}', [AdminController::class, 'updateArticle'])->name('admin.updateArticle');
+Route::get('/admin/edit-article/{id}', [AdminController::class, 'editArticle'])->name('admin.edit-article');
+
 
 Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.detailArtikel');
 

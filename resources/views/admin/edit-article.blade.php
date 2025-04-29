@@ -19,8 +19,25 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 @include('partial.navbar')
 
+    <main class="container">
+        <div class="row">
+            <p class="mt-4"></p>
+            <h1 class="text-center mt-5">Edit Artikel</h1>
+        </div>
+    </main>
     <main class="container my-5">
         <form id="form-update-article" action="{{ route('admin.updateArticle', $artikels->id) }}" method="POST" enctype="multipart/form-data">
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+            @if(session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
+
             @csrf
             @method('PUT')
         <div class="row">
@@ -29,13 +46,13 @@
                 @if($artikels->image)
                 <img src="{{ asset('storage/' . $artikels->image) }}" width="150" class="mb-2"><br>
                 @endif
-                <input type="file" name="image" class="img-fluid"> 
+                <input type="file" name="image" class="img-fluid" accept="image/*"> 
                 <p></p>
-                <h5><input type="date" name="date"></h5>
+                <h5><input type="date" name="date" value="{{ $artikels->created_at->format('Y-m-d') }}"></h5>
             </div>
             <!-- Kolom kanan: Judul & Konten -->
             <div class="col-md-9 mt-md-5">
-                <h2><input type="text" name="title" value="{{ $artikels->title }}" required></h2>
+                <h2><input type="text" name="title" value="{{ $artikels->title }}" required class="form-control mb-3"></h2>
                 <p><textarea name="content" id="summernote" class="form-control" rows="5">{{ $artikels->content }}</textarea></p> 
             </div>
             <div style="float: right; margin-left: auto;" class="col-md-9 mt-md-5"> 

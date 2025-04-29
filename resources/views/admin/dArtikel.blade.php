@@ -69,7 +69,7 @@
         @foreach($artikels as $index => $article)
             <tr>
                 <td>{{ $index + 1 }}</td>
-                <td></td>
+                <td>{{ $article->created_at->format('d-M-Y') }}</td>
                 <td>
                     <img src="{{ asset('storage/' . $article->image) }}" alt="Gambar Artikel" style="width: 100px; height: auto;">
                 </td>
