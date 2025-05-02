@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Produk</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <style>
+        .cke_notifications_area, .cke_notification {
+            display: none !important;
+        }
+    </style>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -57,7 +62,7 @@
             <!-- Kolom kanan: Judul & Konten -->
             <div class="col-md-9 mt-md-5">
                 <h2><input type="text" name="name" value="{{ $product->name }}" required class="form-control mb-3"></h2>
-                <p><textarea name="specifications" id="summernote" class="form-control" rows="5">{{ $product->specifications }}</textarea></p> 
+                <p><textarea name="specifications" id="ckeditor" class="form-control" rows="5">{{ $product->specifications }}</textarea></p> 
             </div>
             <div style="float: right; margin-left: auto;" class="col-md-9 mt-md-5">
                 <a href="javascript:void(0);" onclick="submitUpdateProduct()" class="btn btn-sm btn-danger d-flex align-items-center justify-content-center px-3" style="float: right; width: auto; height: 3rem; font-size: 16px;">
@@ -72,7 +77,9 @@
 
 
 @include('partial.footer')
-<script src="{{ asset('script/summernote-init.js') }}"></script>
+<script>
+  CKEDITOR.replace('ckeditor');
+</script>
 <script>
     function submitUpdateProduct() {
         document.getElementById('form-update-product').submit();

@@ -44,10 +44,11 @@ class AdminController extends Controller
     }
 
     public function storeArticle(Request $request) {
+
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'image' => 'required|image',
+            'image' => 'nullable|image',
             'date' => 'nullable|date',
         ]);
 
