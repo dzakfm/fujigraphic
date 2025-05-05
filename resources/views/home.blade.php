@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fuji Graphic Jakarta</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -98,7 +99,7 @@
         </div>
     </section>
     <div class="read-more">
-        <a href="#" class="read-more-link">Selengkapnya →</a>
+        <a href="{{route('profile')}}" class="read-more-link">Selengkapnya →</a>
     </div>
 
     <section class="why-fujigraphic">
@@ -127,57 +128,37 @@
             </div>
         </div>
     </section>
-    <div class="product-container">
-        <h1>Produk Kami</h1>
-        <div class="product-wrapper">
-            <div class="product-card">
-                <img src="product1.jpg" alt="Fuji Xerox DC IV 4070">
-                <h3>Fuji Xerox DC IV 4070</h3>
-                <p>Read more →</p>
-            </div>
-            <div class="product-card">
-                <img src="product2.jpg" alt="Fuji Xerox DC IV 2260">
-                <h3>Fuji Xerox DC IV 2260</h3>
-                <p>Read more →</p>
-            </div>
-            <div class="product-card">
-                <img src="product3.jpg" alt="Fuji Xerox DC IV 2060">
-                <h3>Fuji Xerox DC IV 2060</h3>
-                <p>Read more →</p>
-            </div>
-            <div class="product-card">
-                <img src="product4.jpg" alt="Fuji Xerox DC IV 3060">
-                <h3>Fuji Xerox DC IV 3060</h3>
-                <p>Read more →</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="product-container-artikel">
-        <h1>Artikel</h1>
-        <div class="product-wrapper">
-            <div class="product-card">
-                <img src="product1.jpg" alt="Fuji Xerox DC IV 4070">
-                <h3>Fuji Xerox DC IV 4070</h3>
-                <a href="#">Read more →</a>
-            </div>
-            <div class="product-card">
-                <img src="product2.jpg" alt="Fuji Xerox DC IV 2260">
-                <h3>Fuji Xerox DC IV 2260</h3>
-                <a href="">Read more →</a>
-            </div>
-            <div class="product-card">
-                <img src="product3.jpg" alt="Fuji Xerox DC IV 2060">
-                <h3>Fuji Xerox DC IV 2060</h3>
-                <a href="">Read more →</a>
-            </div>
-            <div class="product-card">
-                <img src="product4.jpg" alt="Fuji Xerox DC IV 3060">
-                <h3>Fuji Xerox DC IV 3060</h3>
-                <a href="">Read more →</a>
-            </div>
+    <div class="product-container">
+    <h1>Produk Kami</h1>
+    <div class="product-wrapper">
+        @foreach($products as $product)
+        <div class="product-card">
+            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="img-fluid">
+            <h3>{{ $product->name }}</h3>
+            <a href="{{ route('product.show', $product->id) }}"class="btn">Selengkapnya</a>
         </div>
+        @endforeach
     </div>
+</div>
+
+<div class="product-container">
+    <h1>Artikel</h1>
+    <div class="product-wrapper">
+
+    @php use Illuminate\Support\Str; @endphp
+
+        @foreach($artikels as $artikel)
+        <div class="artikel-card">
+            <img src="{{ asset('storage/' . $artikel->image) }}" alt="{{ $artikel->name }}" class="img-fluid">
+            <h3>{{ $artikel->name }}</h3>
+            <p>{!! Str::limit(strip_tags($artikel->content), 150, '...') !!} 
+            <a href="{{ route('artikel.show', $artikel->id) }}"class="btn">Selengkapnya</a></p>
+        </div>
+        @endforeach
+    </div>
+</div>
+
     @include('partial.footer')
     <script src="script/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>

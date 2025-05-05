@@ -1,78 +1,73 @@
-<?php
+    <?php
 
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ArtikelController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminAuthController;
+    use App\Http\Controllers\PageController;
+    use App\Http\Controllers\ProductController;
+    use App\Http\Controllers\AdminController;
+    use App\Http\Controllers\ArtikelController;
+    use Illuminate\Support\Facades\Route;
+    use App\Http\Controllers\AdminAuthController;
+    use App\Http\Controllers\HomeController;
 
-// Halaman utama
-Route::get('/', function () {
-    return view('home');
-})->name('home');
-
-Route::get('/faq', [PageController::class, 'faq'])->name('faq');
-
-
-Route::get('/product', [ProductController::class, 'product'])->name('product');
-
-Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel');
-
-Route::get('/contact', [PageController::class, 'contact'])->name('contact');
-
-// routes/web.php
-Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-Route::post('/admin/category', [AdminController::class, 'storeCategory'])->name('admin.storeCategory');
-Route::post('/admin/product', [AdminController::class, 'storeProduct'])->name('admin.storeProduct');
-Route::delete('/admin/category/{id}', [AdminController::class, 'deleteCategory'])->name('admin.deleteCategory');
-Route::delete('/admin/product/{id}', [AdminController::class, 'deleteProduct'])->name('admin.deleteProduct');
-Route::put('/admin/category/{id}', [AdminController::class, 'updateCategory'])->name('admin.updateCategory');
-Route::put('/admin/product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateProduct');
-Route::post('/admin/article', [AdminController::class, 'storeArticle'])->name('admin.storeArticle');
-Route::put('/admin/article/{id}', [AdminController::class, 'updateArticle'])->name('admin.updateArticle');
-Route::delete('/admin/article/{id}', [AdminController::class, 'deleteArticle'])->name('admin.deleteArticle');
-Route::post('/contact', [AdminController::class, 'storeContact']);
-Route::delete('/admin/contacts/{id}', [AdminController::class, 'destroyContact'])->name('contacts.destroy');
-
-// routes/web dashboard admin
-Route::get('/admin/dProduct', function () { return view('admin.dProduct'); })->name('admin.dProduct');
-Route::get('/admin/dArtikel', [AdminController::class, 'artikelList'])->name('admin.dArtikel');
-Route::get('/admin/add-article', [AdminController::class, 'artikelAdd'])->name('admin.add-article');
-Route::get('/admin/bantuan', function () { return view('admin.bantuan'); })->name('admin.bantuan');
-Route::get('/admin/add-product', [AdminController::class, 'productAdd']) -> name('admin.add-product');
-
-// routes/web Tentang Kami
-Route::get('/profile', [PageController::class, 'profile'])->name('profile');
+    // Halaman utama
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/faq', [PageController::class, 'faq'])->name('faq');
+    Route::get('/product', [ProductController::class, 'product'])->name('product');
+    Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel');
+    Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
 
-//routes artikel
-Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.detail');
-Route::get('/admin/artikel/{id}/edit', [AdminController::class, 'editArticle'])->name('admin.editArticle');
-Route::put('/admin/artikels/{id}', [AdminController::class, 'updateArticle'])->name('admin.updateArticle');
-Route::get('/admin/edit-article/{id}', [AdminController::class, 'editArticle'])->name('admin.edit-article');
+    // routes/web.php
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::post('/admin/category', [AdminController::class, 'storeCategory'])->name('admin.storeCategory');
+    Route::post('/admin/product', [AdminController::class, 'storeProduct'])->name('admin.storeProduct');
+    Route::delete('/admin/category/{id}', [AdminController::class, 'deleteCategory'])->name('admin.deleteCategory');
+    Route::delete('/admin/product/{id}', [AdminController::class, 'deleteProduct'])->name('admin.deleteProduct');
+    Route::put('/admin/category/{id}', [AdminController::class, 'updateCategory'])->name('admin.updateCategory');
+    Route::put('/admin/product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateProduct');
+    Route::post('/admin/article', [AdminController::class, 'storeArticle'])->name('admin.storeArticle');
+    Route::put('/admin/article/{id}', [AdminController::class, 'updateArticle'])->name('admin.updateArticle');
+    Route::delete('/admin/article/{id}', [AdminController::class, 'deleteArticle'])->name('admin.deleteArticle');
+    Route::post('/contact', [AdminController::class, 'storeContact']);
+    Route::delete('/admin/contacts/{id}', [AdminController::class, 'destroyContact'])->name('contacts.destroy');
+
+    // routes/web dashboard admin
+    Route::get('/admin/dProduct', function () { return view('admin.dProduct'); })->name('admin.dProduct');
+    Route::get('/admin/dArtikel', [AdminController::class, 'artikelList'])->name('admin.dArtikel');
+    Route::get('/admin/add-article', [AdminController::class, 'artikelAdd'])->name('admin.add-article');
+    Route::get('/admin/bantuan', function () { return view('admin.bantuan'); })->name('admin.bantuan');
+    Route::get('/admin/add-product', [AdminController::class, 'productAdd']) -> name('admin.add-product');
+
+    // routes/web Tentang Kami
+    Route::get('/profile', [PageController::class, 'profile'])->name('profile');
 
 
-Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.detailArtikel');
+    //routes artikel
+    Route::get('/artikel/{id}/detail', [ArtikelController::class, 'show'])->name('artikel.detail');
+    Route::get('/admin/artikel/{id}/edit', [AdminController::class, 'editArticle'])->name('admin.editArticle');
+    Route::put('/admin/artikels/{id}', [AdminController::class, 'updateArticle'])->name('admin.updateArticle');
+    Route::get('/admin/edit-article/{id}', [AdminController::class, 'editArticle'])->name('admin.edit-article');
+    Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
+    Route::get('/artikel/{id}/detailArtikel', [ArtikelController::class, 'show'])->name('artikel.detailArtikel');
 
-//routes product
-Route::get('/product/{id}', [ProductController::class, 'detail'])->name('product.detailProduct');
+    //routes product
+    Route::get('/product/{id}', [ProductController::class, 'detail'])->name('product.detailProduct');
+    Route::get('/admin/dProduct', [AdminController::class, 'dProduct'])->name('admin.dProduct');
+    Route::get('/admin/product/{id}/edit', [AdminController::class, 'editProduct'])->name('admin.editProduct');
+    Route::put('/admin/product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateProduct');
+    Route::get('/produk/{id}', [ProductController::class, 'show'])->name('product.show');
 
-Route::get('/admin/dProduct', [AdminController::class, 'dProduct'])->name('admin.dProduct');
-Route::get('/admin/product/{id}/edit', [AdminController::class, 'editProduct'])->name('admin.editProduct');
-Route::put('/admin/product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateProduct');
 
 
-//login Admin
-Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
-Route::post('/admin/login', [AdminAuthController::class, 'login']);
-Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+    //login Admin
+    Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+    Route::post('/admin/login', [AdminAuthController::class, 'login']);
+    Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
-Route::get('/login', function () {
-    return redirect('/admin/login');
-})->name('login');
+    Route::get('/login', function () {
+        return redirect('/admin/login');
+    })->name('login');
 
-Route::get('/admin/dashboard', [AdminController::class, 'index'])
-    ->middleware('auth:admin')
-    ->name('admin.dashboard');
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])
+        ->middleware('auth:admin')
+        ->name('admin.dashboard');
 

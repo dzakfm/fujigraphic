@@ -18,6 +18,6 @@ class ArtikelController extends Controller
 
         // Tampilkan view 'detail.blade.php' dengan data artikel
         return view('detailArtikel', compact('artikel'));
-    }                                        
+    }                    
 
 }
