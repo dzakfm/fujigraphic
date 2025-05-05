@@ -33,11 +33,6 @@
         </div>
 
         <hr class="my-4 border-white">
-        
-        <!-- Elemen Peta -->
-        <h5>Lokasi Kami</h5>
-        <div id="footer-map" style="width: 100%; height: 300px; margin: 20px auto;"></div>
-
         <p>&copy; 2025 Perusahaan Anda. All rights reserved.</p>
     </div>
 </footer>
