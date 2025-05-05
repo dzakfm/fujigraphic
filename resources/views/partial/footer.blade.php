@@ -41,28 +41,3 @@
         <p>&copy; 2025 Perusahaan Anda. All rights reserved.</p>
     </div>
 </footer>
-
-<!-- Leaflet CSS dan JS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const map = L.map('footer-map').setView([-6.2, 106.8], 8); // Set view to Jakarta
-
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(map);
-
-        const branches = [
-            { name: "Fujigraphic Pusat Bekasi", lat: -6.2462794, lng: 107.04157 },
-            { name: "Fujigraphic Service Point Jakarta", lat: -6.2668478, lng: 106.9244777 },
-            { name: "Fujigraphic Cabang Surabaya", lat: -7.2368229, lng: 112.6339187 }
-        ];
-
-        branches.forEach(branch => {
-            L.marker([branch.lat, branch.lng])
-                .addTo(map)
-                .bindPopup(`<b>${branch.name}</b>`);
-        });
-    });
-</script>
