@@ -26,7 +26,7 @@
                 <button>Pesan/Hubungi Kami</button>
             </div>
             <div class="col-md-9 mt-md-9">
-                <p>Kategori</p>
+                <p>Kategori : {{ $product->category->name ?? '-' }}</p>
             </div>
         </div>
         

@@ -151,7 +151,7 @@
         @foreach($artikels as $artikel)
         <div class="artikel-card">
             <img src="{{ asset('storage/' . $artikel->image) }}" alt="{{ $artikel->name }}" class="img-fluid">
-            <h3>{{ $artikel->name }}</h3>
+            <h3>{{ $artikel->title }}</h3>
             <p>{!! Str::limit(strip_tags($artikel->content), 150, '...') !!} 
             <a href="{{ route('artikel.show', $artikel->id) }}"class="btn">Selengkapnya</a></p>
         </div>

@@ -28,7 +28,7 @@ class ProductController extends Controller
 
     public function detail($id)
     {
-        $product = Product::findOrFail($id); // Ambil data produk berdasarkan id
+        $product = Product::with('category')->findOrFail($id); // Ambil data produk berdasarkan id
         return view('detailProduct', compact('product'));
     }
 
