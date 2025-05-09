@@ -46,91 +46,31 @@
     <section class="clients text-center py-5">
         <div class="container">
             <h2>Our Clients</h2>
-            <p>We have been working with some Fortune 500+ clients</p>
+            <p>We have been working with some Fortune 50+ clients</p>
             <div class="d-flex justify-content-center gap-4">
-                <img src="client1.png" alt="Client 1">
+                <img src="{{ asset('images/clientsimg/taspen1.jpg') }}" alt="Client 1">
                 <img src="client2.png" alt="Client 2">
                 <img src="client3.png" alt="Client 3">
                 <img src="client4.png" alt="Client 4">
             </div>
         </div>
     </section>
-    <section class="about-section">
-        <div class="container">
-            <h1>Tentang Perushanaan</h1>
-            <div class="text-center">
-                <p>Fujigraphic Indonesia didirikan pada Januari 2011 oleh Wahyu Seno B.A, berbekal pengalaman selama
-                    kurang
-                    lebih 15 tahun menangani mesin-mesin Xerox Digital Multifungsi sebagai Engineer Specialist Xerox di
-                    PT.
-                    Astragraphia tbk.
-
-                    Karena tuntutan perkembangan usaha maka pada tanggal 1 Juni 2012 Fujigraphic Indonesia kami kukuhkan
-                    menjadi CV.FUJIGRAPHIC INDONESIA.
-
-                    Jakartacopy.com bergerak dalam bidang jasa penyewaan dan pengadaan mesin fotocopy multifungsi dengan
-                    brand Xerox. Kami selalu berkomitmen untuk membantu menekan cost bisnis anda dalam penggandaan
-                    dokumen
-                    dengan menyediakan mesin multifungsi handal yang didatangkan langsung dari Singapore dan Australia
-                    dengan harga yang kompetitif serta terjamin kualitasnya.
-
-                    Seiring dengan perkembangannya yang pesat dan ekspansi bisnis yang dilakukan secara agresif, maka
-                    pada
-                    tanggal 18 september 2015 Fujigraphic Indonesia membuka 2 cabang secara bersamaan. Dimana keduanya
-                    berada di kota Jakarta (Fujigraphic Jakarta) dan kota Surabaya (Fujigraphic Surabaya). Ekspansi
-                    bisnis
-                    Fujigraphic Indonesia tidak akan berhenti sampai di situ. Dalam waktu dekat dan beberapa tahun ke
-                    depan
-                    akan segera dibuka cabang baru di sejumlah kota strategis lainnya.
-
-                    Menggunakan mesin fotocopy multifungsi Xerox yang telah terbukti tangguh dan handal sekaligus
-                    efisien
-                    semakin memberikan rasa aman bagi kelangsungan bisnis anda.
-
-                    Teknisi yang dapat diandalkan dengan training yang berkelanjutan dan sangat terlatih selalu
-                    memberikan
-                    pelayanan service yang terbaik dan memastikan mesin dalam kondisi prima.
-
-                    Dengan segala reputasinya maka Fujigraphic telah dipercaya oleh ratusan customer kami yang tersebar
-                    di
-                    kota kota besar seperti Jakarta Bekasi Cikarang Karawang dan Surabaya. Jangan pernah ragu untuk
-                    mempercayakan pengelolaan document anda kepada Fujigraphic.</p>
-            </div>
-        </div>
-    </section>
-    <div class="read-more">
-        <a href="{{route('profile')}}" class="read-more-link">Selengkapnya →</a>
-    </div>
 
     <section class="why-fujigraphic">
         <div class="container">
             <div class="content">
-                <img src="illustration.png" alt="Illustration">
                 <div class="text">
                     <h2>Kenapa harus fujigraphic?</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet justo ipsum. Sed accumsan
-                        quam vitae est varius fringilla. Pellentesque placerat vestibulum lorem sed porta.</p>
-                    <button class="btn">Learn More</button>
+                    <p>‌Semua mesin fotocopy Xerox yang kami sewakan sudah terkoneksi dengan jaringan Wifi dengan komputer / laptop untuk fitur printer dan scanner. 
+                        Oleh karena itu, dengan hanya menyewa satu mesin fotocopy dari kami, anda...</p>
+                    <button class="btn">Selengkapnya</button>
                 </div>
             </div>
         </div>
     </section>
-    <section class="why-fujigraphic">
-        <div class="container">
-            <div class="content">
-                <img src="layanan.png" alt="Illustration">
-                <div class="text">
-                    <h2>Layanan</h2>
-                    <p>Kami menyediakan berbagai jenis mesin fotocopy dan tambahan layanan perbaikan atau perawatan
-                        teknis untuk setiap mesin yang disewa</p>
-                    <button class="btn">Learn More</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <section>
     <div class="product-container">
-    <h1>Produk Kami</h1>
+    <h1 style="text-align: center;">Produk Kami</h1>
     <div class="product-wrapper">
         @foreach($products as $product)
         <div class="product-card">
@@ -140,6 +80,19 @@
         </div>
         @endforeach
     </div>
+    </section>
+    <section class="why-fujigraphic">
+        <div class="container">
+            <div class="content">
+                <div class="text">
+                    <h2>Layanan</h2>
+                    <p>Kami menyediakan berbagai jenis mesin fotocopy dan tambahan layanan perbaikan atau perawatan
+                        teknis untuk setiap mesin yang disewa</p>
+                    <button class="btn">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>  
 </div>
 
 <div class="product-container">

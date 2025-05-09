@@ -211,8 +211,20 @@ main {
 
 /* Kenapa Harus Fujigraphic */
 .why-fujigraphic {
-    background-color: #f9f9f9;
-    padding: 60px 0;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+
+.why-fujigraphic .container,
+.why-fujigraphic .content,
+.why-fujigraphic .text {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
 }
 
 .content {
