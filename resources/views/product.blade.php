@@ -28,7 +28,7 @@
                 <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title">{{ $product->name }}</h5>
-                  <a href="{{ route('product.detailProduct', ['id' => $product->id]) }}" class="btn btn-primary">
+                  <a href="{{ route('product.detailProduct', ['id' => $product->id]) }}" class="btn btn-primary mt-auto">
                       Baca Selengkapnya
                   </a>
                 </div>

@@ -16,7 +16,7 @@
     <h1 class="text-center mb-5 mt-5">Artikel</h1>
 
       <section class="mb-5">
-        <h2 class="mb-4 text-success">
+        <h2 class="mb-4 text-success"></h2>
         <div class="row">
             @forelse($artikels as $artikel)
             <div class="col-md-4 mb-4">
@@ -26,7 +26,7 @@
                   <h5 class="card-title">{{ $artikel->title }}</h5>
                   <p class="date-text">{{ \Carbon\Carbon::parse($artikel->created_at)->format('d M Y') }}</p>
                   <p class="card-text">{!! Str::limit($artikel->content, 100) !!}</p>
-                  <a href="{{ route('artikel.detailArtikel', ['id' => $artikel->id]) }}" class="btn btn-primary">
+                  <a href="{{ route('artikel.detailArtikel', ['id' => $artikel->id]) }}" class="btn btn-primary mt-auto">
                       Baca Selengkapnya
                   </a>
                 </div>
