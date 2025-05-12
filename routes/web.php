@@ -14,6 +14,8 @@
     Route::get('/product', [ProductController::class, 'product'])->name('product');
     Route::get('/artikel', [ArtikelController::class, 'index'])->name('artikel');
     Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+    Route::get('/profile', [PageController::class, 'profile'])->name('profile');
+    Route::get('/sdank', [PageController::class, 'sdank'])->name('sdank');
 
 
     // routes/web.php
@@ -36,10 +38,6 @@
     Route::get('/admin/add-article', [AdminController::class, 'artikelAdd'])->name('admin.add-article');
     Route::get('/admin/bantuan', function () { return view('admin.bantuan'); })->name('admin.bantuan');
     Route::get('/admin/add-product', [AdminController::class, 'productAdd']) -> name('admin.add-product');
-
-    // routes/web Tentang Kami
-    Route::get('/profile', [PageController::class, 'profile'])->name('profile');
-
 
     //routes artikel
     Route::get('/artikel/{id}/detail', [ArtikelController::class, 'show'])->name('artikel.detail');

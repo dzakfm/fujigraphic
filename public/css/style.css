@@ -532,3 +532,9 @@ footer a:hover {
 .nav-link:hover {
     color: #7ab8f0 !important;
 }
+
+/* Dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* menghindari animasi lompat */
+}

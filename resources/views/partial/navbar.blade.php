@@ -20,8 +20,16 @@
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('contact') ? 'custom-active' : '' }}" href="{{ route('contact') }}">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('faq') ? 'custom-active' : '' }}" href="{{ route('faq') }}">FAQ</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle {{ request()->routeIs('profile') ? 'custom-active' : '' }}"
+                      href="{{ route('profile') }}" id="tentangKamiLink">
+                        Tentang Kami
+                    </a>
+                    <ul style="text-align: center;" class="dropdown-menu" aria-labelledby="tentangKamiDropdown">
+                        <li><a class="dropdown-item {{ request()->routeIs('profile') ? 'active' : '' }}" href="{{ route('profile') }}">Tentang Kami</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('faq') ? 'active' : '' }}" href="{{ route('faq') }}">FAQ</a></li>
+                        <li><a class="dropdown-item {{ request()->routeIs('sdank') ? 'active' : '' }}" href="{{ route('sdank') }}">S&K</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>

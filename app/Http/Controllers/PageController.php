@@ -16,11 +16,16 @@ class PageController extends Controller
         return view('faq');
     }
 
+    public function sdank()
+    {
+        return view('sdank');
+    }
 
     public function profile()
     {
         return view('profile');
     }
+
     public function contact()
     {
         return view('contact');
