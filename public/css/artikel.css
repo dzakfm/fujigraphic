@@ -1,7 +1,7 @@
 body {
-    background-color: #eef3f7 !important;
-    font-family: 'Arial', sans-serif;
-    color: #333;
+  background-color: #eef3f7 !important;
+  font-family: 'Arial', sans-serif;
+  color: #333;
 }
 
 h1 {
@@ -19,7 +19,8 @@ h1 {
 .card:hover {
   transform: translateY(-6px) !important;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1) !important;
-  background-color: #f1f1f1 !important; /* Ubah latar belakang saat hover */
+  background-color: #f1f1f1 !important;
+  /* Ubah latar belakang saat hover */
 }
 
 /* --- Gambar Produk --- */
@@ -29,7 +30,8 @@ h1 {
 }
 
 .card:hover .card-img-top {
-  transform: scale(1.05) !important; /* Perbesar gambar sedikit saat hover */
+  transform: scale(1.05) !important;
+  /* Perbesar gambar sedikit saat hover */
 }
 
 /* --- Judul Produk --- */
@@ -41,22 +43,22 @@ h1 {
 }
 
 .artikel-content p {
-    line-height: 1.7;
-    margin-bottom: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
 }
 
 .btn-customartl {
-    background-color: #000000 !important;
-    color: white !important;
-    border: none !important;
-    padding: 8px 16px !important;
-    border-radius: 6px !important;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out !important;
+  background-color: #da251d !important;
+  color: white !important;
+  border: none !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out !important;
 }
 
 .btn-customartl:hover {
-    background-color: #302f2f !important;
-    color: white !important;
-    text-decoration: none !important;
+  background-color: #b51e17 !important;
+  color: white !important;
+  text-decoration: none !important;
   transform: scale(1.05) !important;
 }

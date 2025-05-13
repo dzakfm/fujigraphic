@@ -256,7 +256,7 @@ main {
 }
 
 .btn {
-    background-color: #4caf50;
+    background-color: #da251d;
     color: white;
     padding: 12px 24px;
     border: none;
@@ -267,7 +267,7 @@ main {
 }
 
 .btn:hover {
-    background-color: #388e3c;
+    background-color: #b51e17;
 }
 
 /* Pastikan produk ada dalam satu baris */
@@ -541,15 +541,20 @@ footer a:hover {
 /* Dropdown on hover */
 .nav-item.dropdown:hover .dropdown-menu {
     display: block;
-    margin-top: 0; /* menghindari animasi lompat */
+    margin-top: 0;
+    /* menghindari animasi lompat */
 }
 
 .custom-navbar {
-    background-color: rgba(0, 0, 0, 0.4); /* Transparansi */
-    backdrop-filter: blur(5px);          /* Blur efek kaca */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Transparansi */
+    backdrop-filter: blur(5px);
+    /* Blur efek kaca */
     transition: background-color 0.3s ease;
 }
+
 /* Efek saat scroll */
 .custom-navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.8); /* Transparansi saat scroll */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Transparansi saat scroll */
 }
