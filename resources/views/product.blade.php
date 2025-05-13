@@ -7,18 +7,19 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/produk.css') }}">
 </head>
 <body>
   
   @include('partial.navbar')
 
   <main class="container my-5">
-    <h1 class="text-center mb-5 mt-5">PRODUK KAMI</h1>
+    <h1 class="text-center mb-5 mt-5">Produk Kami</h1>
 
     {{-- Loop kategori --}}
     @forelse($categories as $category)
       <section class="mb-5">
-        <h2 class="mb-4 text-success">{{ $category->name }}</h2>
+        <h2 class="mb-4">{{ $category->name }}</h2>
 
         <div class="row">
           {{-- Loop produk --}}
@@ -28,7 +29,7 @@
                 <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title">{{ $product->name }}</h5>
-                  <a href="{{ route('product.detailProduct', ['id' => $product->id]) }}" class="btn btn-primary mt-auto">
+                  <a href="{{ route('product.detailProduct', ['id' => $product->id]) }}" class="btn btn-customprd mt-auto">
                       Baca Selengkapnya
                   </a>
                 </div>

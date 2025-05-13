@@ -16,7 +16,7 @@
     <div class="row">
         <!-- Kolom Hubungi Kami & Form Kontak -->
         <div class="col-md-6">
-            <h2 class="fw-bold">Hubungi Kami :</h2>
+            <h2 class="fw-bold mb-5 mt-5">Hubungi Kami :</h2>
             <table class="table table-borderless">
                 <tr>
                     <td class="fw-bold">Telp / Fax</td>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="col-md-6">
-            <h2 class="fw-bold">Form Kontak :</h2>
+            <h2 class="fw-bold mb-5 mt-5">Form Kontak :</h2>
             <form action="{{ url('/contact') }}" method="POST">
             @csrf
             <div class="mb-3">

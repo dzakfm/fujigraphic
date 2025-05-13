@@ -36,7 +36,7 @@
 
     <section id="profile" class="py-5">
         <div class="container">
-            <h1 class="text-center mb-5" data-aos="fade-down">Tentang Kami</h1>
+            <h1 class="text-center mb-5 mt-5" data-aos="fade-down">Tentang Kami</h1>
             <div class="text-center mb-4" data-aos="zoom-in">
                 <img
                   src="./images/fujigraphicjakarta.png"

@@ -1,0 +1,67 @@
+/* --- Warna Dasar & Umum --- */
+body {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* --- Judul Halaman --- */
+h1 {
+  color: #080808 !important;
+  font-weight: bold !important;
+}
+
+/* --- Judul Kategori --- */
+h2 {
+  color: #0a0a0a !important; 
+  font-weight: 600 !important;
+}
+
+/* --- Kartu Produk --- */
+.card {
+  background-color: #f9f9f9 !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 10px !important;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s, background-color 0.3s !important;
+}
+
+.card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1) !important;
+  background-color: #f1f1f1 !important; /* Ubah latar belakang saat hover */
+}
+
+/* --- Gambar Produk --- */
+.card-img-top {
+  border-radius: 8px !important;
+  transition: transform 0.3s ease-in-out !important;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05) !important; /* Perbesar gambar sedikit saat hover */
+}
+
+/* --- Judul Produk --- */
+.card-title {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: #212529 !important;
+  margin-bottom: 1rem !important;
+}
+
+/* --- Tombol "Baca Selengkapnya" --- */
+.btn-customprd {
+  background-color: #da251d !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out !important;
+}
+
+.btn-customprd:hover {
+  background-color: #b51e17 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  transform: scale(1.05) !important; /* Sedikit perbesaran pada tombol saat hover */
+}

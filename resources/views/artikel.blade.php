@@ -7,9 +7,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link href="{{ asset('css/artikel.css') }}" rel="stylesheet">
 </head>
 <body>
-  
   @include('partial.navbar')
 
   <main class="container my-5">
@@ -26,7 +26,7 @@
                   <h5 class="card-title">{{ $artikel->title }}</h5>
                   <p class="date-text">{{ \Carbon\Carbon::parse($artikel->created_at)->format('d M Y') }}</p>
                   <p class="card-text">{!! Str::limit($artikel->content, 100) !!}</p>
-                  <a href="{{ route('artikel.detailArtikel', ['id' => $artikel->id]) }}" class="btn btn-primary mt-auto">
+                  <a href="{{ route('artikel.detailArtikel', ['id' => $artikel->id]) }}" class="btn btn-customartl mt-auto">
                       Baca Selengkapnya
                   </a>
                 </div>
