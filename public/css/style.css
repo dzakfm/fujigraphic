@@ -220,11 +220,26 @@ main {
 }
 
 .why-fujigraphic .container,
-.why-fujigraphic .content,
-.why-fujigraphic .text {
+.why-fujigraphic .content {
     margin: 0 auto;
     padding: 0;
     text-align: center;
+}
+.why-fujigraphic .text {
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+}
+
+.why-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.why-points p {
+  font-size: 14px;
+  margin-top: 8px;
 }
 
 .content {
@@ -264,10 +279,6 @@ main {
     border-radius: 6px;
     cursor: pointer;
     transition: 0.3s;
-}
-
-.btn:hover {
-    background-color: #b51e17;
 }
 
 /* Pastikan produk ada dalam satu baris */
@@ -557,4 +568,17 @@ footer a:hover {
 .custom-navbar.scrolled {
     background-color: rgba(0, 0, 0, 0.8);
     /* Transparansi saat scroll */
+}
+
+.tombol-wrapper {
+  display: flex;
+  justify-content: center;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #b51e17;
+  color: #fff;
+  text-decoration: none;
+  transform: scale(1.05);
 }
