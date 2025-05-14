@@ -533,6 +533,34 @@ footer a:hover {
     height: 400px;
 }
 
+.branch-details {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease;
+  margin-top: 10px;
+  padding: 0 15px;
+  background: #ffffff;
+  border-left: 3px solid #0d6efd;
+  border-radius: 5px;
+}
+
+.branch-details.open {
+  padding: 10px 15px;
+  max-height: 1000px; /* cukup tinggi agar kontennya muat */
+}
+
+.branch-toggle {
+  cursor: pointer;
+}
+
+.branch-icon {
+  transition: transform 0.3s ease;
+}
+
+.branch-icon.rotate {
+  transform: rotate(90deg);
+}
+
 .navbar .nav-link {
     color: #fff !important;
     font-weight: bold;
