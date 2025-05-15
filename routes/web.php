@@ -46,6 +46,8 @@
     Route::get('/admin/edit-article/{id}', [AdminController::class, 'editArticle'])->name('admin.edit-article');
     Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('artikel.show');
     Route::get('/artikel/{id}/detailArtikel', [ArtikelController::class, 'show'])->name('artikel.detailArtikel');
+    Route::get('/search', [ArtikelController::class, 'search'])->name('artikel.search');
+
 
     //routes product
     Route::get('/product/{id}', [ProductController::class, 'detail'])->name('product.detailProduct');
@@ -53,6 +55,7 @@
     Route::get('/admin/product/{id}/edit', [AdminController::class, 'editProduct'])->name('admin.editProduct');
     Route::put('/admin/product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateProduct');
     Route::get('/produk/{id}', [ProductController::class, 'show'])->name('product.show');
+    Route::get('/search', [ProductController::class, 'search'])->name('product.search');
 
 
 

@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Website Fuji Graphic Jakarta siap digunakan!");
 
     function loadComponent(url, targetId) {
         fetch(url)
@@ -14,10 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => console.error(`Error loading ${url}:`, error));
     }
-
-    // Panggil fungsi untuk load navbar dan footer
-    loadComponent("components/navbar.html", "navbar-container");
-    loadComponent("components/footer.html", "footer-container");
 
     // Efek hover pada navbar
     const navbarLinks = document.querySelectorAll(".navbar-nav .nav-link");

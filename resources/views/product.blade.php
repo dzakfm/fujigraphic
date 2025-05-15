@@ -16,9 +16,52 @@
   <main class="container my-5">
     <h1 class="text-center mb-5 mt-5">Produk Kami</h1>
 
+    <form id="searchForm" action="/search" method="GET" class="mb-4 position-relative">
+      <div class="input-group">
+        <input type="text" name="search" id="searchInput" class="form-control" placeholder="Cari artikel..." value="{{ request('search') }}">
+        <div class="input-group-append">
+          <button class="btn btn-success" type="submit">Cari</button>
+        </div>
+      </div>
+
+    @if(request('search'))
+    <h2 class="mb-5 mt-2 text-secondary">
+      Hasil pencarian untuk: <em>"{{ request('search') }}"</em>
+    </h2>
+
+    
+@php
+$grouped = $products->groupBy('category.name');
+@endphp
+
+@forelse($grouped as $categoryName => $group)
+  <section class="mb-5 my-5">
+    <h2 class="mb-4">{{ $categoryName ?? 'Tanpa Kategori' }}</h2>
+    <div class="row g-4">
+      @foreach($group as $product)
+        <div class="col-md-4">
+          <div class="card h-100 text-center p-3">
+            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">{{ $product->name }}</h5>
+              <a href="{{ route('product.detailProduct', ['id' => $product->id]) }}" class="btn btn-customprd mt-auto">
+                Baca Selengkapnya
+              </a>
+            </div>
+          </div>
+        </div>
+      @endforeach
+    </div>
+  </section>
+@empty
+  <p class="text-muted">Produk tidak ditemukan.</p>
+@endforelse
+
+
+    @else
     {{-- Loop kategori --}}
     @forelse($categories as $category)
-      <section class="mb-5">
+      <section class="mb-5 my-5">
         <h2 class="mb-4">{{ $category->name }}</h2>
 
         <div class="row">
@@ -43,6 +86,7 @@
     @empty
       <p class="text-center">Belum ada kategori tersedia.</p>
     @endforelse
+    @endif
   </main>
 
   @include('partial.footer')

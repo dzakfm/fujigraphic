@@ -18,6 +18,16 @@ class ArtikelController extends Controller
 
         // Tampilkan view 'detail.blade.php' dengan data artikel
         return view('detailArtikel', compact('artikel'));
-    }                    
+    } 
+
+   public function search(Request $request)
+   {
+        $keyword = $request->search;
+        $artikels = Artikel::where('title', 'like', '%'.$keyword.'%')
+                       ->orWhere('content', 'like', '%'.$keyword.'%')
+                       ->get();
+
+        return view('artikel', compact('artikels'));
+   }                  
 
 }

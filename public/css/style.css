@@ -610,3 +610,18 @@ footer a:hover {
   text-decoration: none;
   transform: scale(1.05);
 }
+
+#searchInput {
+  transition: all 0.3s ease;
+}
+
+#searchInput:hover {
+  border-color: #b51e17;
+  box-shadow: 0 0 5px rgba(167, 40, 40, 0.3);
+}
+
+#searchInput:focus {
+  border-color: #b51e17;
+  box-shadow: 0 0 0 0.2rem rgba(167, 40, 40, 0.25);
+  outline: none;
+}
