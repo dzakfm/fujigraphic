@@ -59,7 +59,7 @@
       <form action="{{ route('admin.articles') }}" method="GET" class="d-flex align-items-center search-form-admin">
         <input type="text" name="search" class="form-control form-control-sm search-input-admin" placeholder="Cari artikel..." value="{{ request('search') }}">
         <button type="submit" class="btn btn-sm btn-primary search-button-admin">
-          <i class="bi bi-search"></i> Cari
+          <i class="bi bi-search"></i> 🔍︎ Cari
         </button>
       </form>
     </div>

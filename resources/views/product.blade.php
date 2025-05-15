@@ -20,7 +20,7 @@
       <div class="input-group">
         <input type="text" name="search" id="searchInput" class="form-control" placeholder="Cari produk..." value="{{ request('search') }}">
         <div class="input-group-append">
-          <button class="btn btn-success" type="submit">Cari</button>
+          <button class="btn btn-success" type="submit">🔍︎ Cari</button>
         </div>
       </div>
 
@@ -28,7 +28,6 @@
     <h2 class="mb-5 mt-2 text-secondary">
       Hasil pencarian untuk: <em>"{{ request('search') }}"</em>
     </h2>
-
     
 @php
 $grouped = $products->groupBy('category.name');

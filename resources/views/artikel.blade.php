@@ -21,7 +21,7 @@
       <div class="input-group">
         <input type="text" name="search" id="searchInput" class="form-control" placeholder="Cari artikel..." value="{{ request('search') }}">
         <div class="input-group-append">
-          <button class="btn btn-success" type="submit">Cari</button>
+          <button class="btn btn-success" type="submit">🔍︎ Cari</button>
         </div>
       </div>
 
