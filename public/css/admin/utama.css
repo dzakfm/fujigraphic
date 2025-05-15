@@ -318,4 +318,41 @@ th:nth-child(2) {
     padding: 0.5rem 0 0 0;
     background-color: #f5f5f5;
 }
-  
+.search-form-admin {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-input-admin {
+  width: 200px;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.search-input-admin:focus {
+  outline: none;
+  border: 1px solid #00318b;
+  box-shadow: 0 0 0 0.2rem rgba(40, 53, 167, 0.25);
+}
+
+.search-input-admin:hover {
+  border-color: #00318b;
+  box-shadow: 0 0 5px rgba(40, 53, 167, 0.25);
+}
+
+.search-button-admin {
+  font-size: 14px;
+  padding: 5px 12px;
+  border-radius: 4px;
+  background-color: #00318b;
+  color: #fff;
+}
+
+.search-button-admin:hover {
+  background-color: #002a5c;
+  color: #fff;
+}

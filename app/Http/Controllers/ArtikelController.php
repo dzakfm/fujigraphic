@@ -20,7 +20,7 @@ class ArtikelController extends Controller
         return view('detailArtikel', compact('artikel'));
     } 
 
-   public function search(Request $request)
+   public function searchArtikel(Request $request)
    {
         $keyword = $request->search;
         $artikels = Artikel::where('title', 'like', '%'.$keyword.'%')

@@ -16,9 +16,9 @@
   <main class="container my-5">
     <h1 class="text-center mb-5 mt-5">Produk Kami</h1>
 
-    <form id="searchForm" action="/search" method="GET" class="mb-4 position-relative">
+    <form id="searchForm" action="{{ route('product.search') }}" method="GET" class="mb-4 position-relative">
       <div class="input-group">
-        <input type="text" name="search" id="searchInput" class="form-control" placeholder="Cari artikel..." value="{{ request('search') }}">
+        <input type="text" name="search" id="searchInput" class="form-control" placeholder="Cari produk..." value="{{ request('search') }}">
         <div class="input-group-append">
           <button class="btn btn-success" type="submit">Cari</button>
         </div>
