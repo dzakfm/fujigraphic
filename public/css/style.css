@@ -225,6 +225,7 @@ main {
     padding: 0;
     text-align: center;
 }
+
 .why-fujigraphic .text {
     margin: 0 auto;
     padding: 0;
@@ -232,14 +233,14 @@ main {
 }
 
 .why-icon {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
 .why-points p {
-  font-size: 14px;
-  margin-top: 8px;
+    font-size: 14px;
+    margin-top: 8px;
 }
 
 .content {
@@ -262,6 +263,13 @@ main {
     font-size: 2rem;
     color: #333;
     font-weight: bold;
+}
+
+.our {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
 }
 
 .text p {
@@ -288,7 +296,7 @@ main {
     /* Lebar maksimum */
     margin: auto;
     /* Pusatkan */
-    overflow: hidden;
+    overflow: visible;
     /* Hindari scroll horizontal */
     padding: 20px 0;
 }
@@ -571,14 +579,57 @@ footer a:hover {
 }
 
 .tombol-wrapper {
-  display: flex;
-  justify-content: center;
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .btn:hover {
-  background-color: #b51e17;
-  color: #fff;
-  text-decoration: none;
-  transform: scale(1.05);
+    background-color: #b51e17;
+    color: #fff;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+.swiper-slide {
+    height: auto !important;
+    display: flex;
+}
+
+.artikel-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.artikel-card p {
+    flex-grow: 1;
+}
+
+.product-container {
+    position: relative;
+    /* buat acuan posisi absolut panah */
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    z-index: 10;
+    color: #007bff;
+}
+
+.swiper-button-prev {
+    left: -40px;
+    /* geser keluar kiri */
+}
+
+.swiper-button-next {
+    right: -40px;
+    /* geser keluar kanan */
 }
