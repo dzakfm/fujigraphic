@@ -166,8 +166,16 @@ class AdminController extends Controller
         return view('admin.edit-article', compact('artikels'));
     }
     
-    public function artikelList() {
-        $artikels = Artikel::all(); 
+    public function artikelList(Request $request) {
+        $query = Artikel::query();
+
+        if ($request->has('search')) {
+            $search = $request->search;
+            $query->where('title', 'like', '%' . $search . '%')
+                ->orWhere('content', 'like', '%' . $search . '%');
+        }
+
+        $artikels = $query->latest()->get();
         return view('admin.dArtikel', compact('artikels'));
     }
 

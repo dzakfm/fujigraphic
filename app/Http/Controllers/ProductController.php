@@ -32,6 +32,21 @@ class ProductController extends Controller
         return view('detailProduct', compact('product'));
     }
 
+    public function searchProduk(Request $request)
+    {
+        $keyword = $request->search;
+
+        // Ambil semua kategori
+        $categories = Category::all();
+
+        // Filter produk berdasarkan keyword
+        $products = Product::where('name', 'like', '%' . $keyword . '%')
+            ->orWhere('specifications', 'like', '%' . $keyword . '%')
+            ->get();
+
+        return view('product', compact('products', 'categories', 'keyword'));
+    }
+
 
 }
 
