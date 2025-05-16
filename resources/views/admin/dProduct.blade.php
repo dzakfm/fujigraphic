@@ -61,6 +61,21 @@
         <button type="submit" class="btn search-button-admin">
           <i class="bi bi-search"></i> 🔍︎ Cari
         </button>
+        
+    </div>
+    <div class="d-flex justify-content-start mb-3" style="margin-left:40px;">
+      <p class="sort-kategori-label">Filter Kategori:</p>
+      <select name="category" id="category" onchange="this.form.submit()" class="form-select sort-kategori">
+          <option value="">-- SEMUA KATEGORI --</option>
+          @foreach ($categories as $category)
+            <option value="{{ $category->id }}" {{ request('category') == $category->id ? 'selected' : '' }}>
+              {{ $category->name }}
+            </option>
+          @endforeach
+        </select>
+         {{-- Hidden input untuk menjaga sorting --}}
+        <input type="hidden" name="sort" value="{{ request('sort') }}">
+        <input type="hidden" name="direction" value="{{ request('direction') }}">
     </div>
 
     @php

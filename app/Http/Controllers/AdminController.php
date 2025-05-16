@@ -208,6 +208,10 @@ class AdminController extends Controller
             });
         }
 
+        if ($request->filled('category')) {
+            $query->where('category_id', $request->category);
+        }
+
         $allowedSorts = ['id', 'name'];
         $sort = $request->get('sort');
         $direction = $request->get('direction', 'asc');
