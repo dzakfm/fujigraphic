@@ -39,11 +39,22 @@ class ProductController extends Controller
         // Ambil semua kategori
         $categories = Category::all();
 
-        // Filter produk berdasarkan keyword
-        $products = Product::where('name', 'like', '%' . $keyword . '%')
-            ->orWhere('specifications', 'like', '%' . $keyword . '%')
-            ->get();
+        $query = Product::query();
 
+        // Filter produk berdasarkan keyword
+        if ($keyword) {
+            $query->where(function ($q) use ($keyword) {
+                $q->where('name', 'like', '%' . $keyword . '%')
+                ->orWhere('specifications', 'like', '%' . $keyword . '%');
+            });
+        }
+
+        if ($request->filled('category')) {
+            $query->where('category_id', $request->category);
+        }
+
+        $products = $query->get();
+        
         return view('product', compact('products', 'categories', 'keyword'));
     }
 

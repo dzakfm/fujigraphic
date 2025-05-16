@@ -23,10 +23,27 @@
           <button class="btn btn-success" type="submit">🔍︎ Cari</button>
         </div>
       </div>
+      
+      <div class="input-group">
+        <p class="sort-kategori-label">Filter Kategori:</p>
+      </div>
 
-    @if(request('search'))
+      <div class="input-group">
+        <select name="category" id="category" class="form-select sort-kategori" onchange="this.form.submit()">
+          <option value="">-- SEMUA KATEGORI --</option>
+          @foreach ($categories as $category)
+            <option value="{{ $category->id }}" {{ request('category') == $category->id ? 'selected' : '' }}>
+              {{ $category->name }}
+            </option>
+          @endforeach
+        </select>
+        <input type="hidden" name="sort" value="{{ request('sort') }}">
+        <input type="hidden" name="direction" value="{{ request('direction') }}">
+      </div>
+
+    @if(request()->filled('search') || request()->filled('category'))
     <h2 class="mb-5 mt-2 text-secondary">
-      Hasil pencarian untuk: <em>"{{ request('search') }}"</em>
+      Hasil pencarian untuk: <em>"{{ request('search') ?? $categories->firstWhere('id', request('category'))->name ?? '' }}"</em>
     </h2>
     
 @php

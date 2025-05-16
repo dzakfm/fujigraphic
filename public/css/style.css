@@ -677,3 +677,26 @@ footer a:hover {
     box-shadow: 0 0 0 0.2rem rgba(167, 40, 40, 0.25);
     outline: none;
 }
+
+.sort-kategori {
+    text-align: center;
+    font-size: 13px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.sort-kategori:hover, 
+.sort-kategori:focus {
+    border: 2px solid #00318b;
+    box-shadow: 0 0 5px rgba(40, 53, 167, 0.5);
+    outline: none;
+}
+
+.sort-kategori-label {
+    margin-top: 10px;
+    margin-right: 10px;
+    font-weight: 600;
+}
