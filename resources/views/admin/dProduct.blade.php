@@ -54,28 +54,45 @@
    <div class="tabelPengunjung">
     <h1>Daftar Produk</h1>
     <a href="{{ route('admin.add-product') }}" class="btn btn-sm btn-add">✚ Tambah Produk</a>
+
+    <div class="d-flex justify-content-start mb-3" style="margin-left:40px;">
+      <form action="{{ route('admin.dProduct') }}" method="GET" class="d-flex align-items-center search-form-admin">
+        <input type="text" name="search" class="form-control form-control-sm search-input-admin" placeholder="Cari produk..." value="{{ request('search') }}">
+        <button type="submit" class="btn btn-sm btn-primary search-button-admin">
+          <i class="bi bi-search"></i> 🔍︎ Cari
+        </button>
+    </div>
+
+    @php
+    $currentSort = request('sort');
+    $currentDirection = request('direction', 'asc');
+
+    $toggleDirection = fn($col) => ($currentSort === $col && $currentDirection === 'asc') ? 'desc' : 'asc';
+    @endphp
+
     <table class="table">
       <thead>
         <tr>
-            <th>No</th>
+            <th>No <a class="sort-link" href="{{ route('admin.dProduct', array_merge(request()->all(), ['sort' => 'id', 'direction' => $toggleDirection('id')])) }}">
+                  ↕ </a></th>
             <th>Gambar</th>
-            <th>Nama Produk</th>
+            <th>Nama Produk <a class="sort-link" href="{{ route('admin.dProduct', array_merge(request()->all(), ['sort' => 'name', 'direction' => $toggleDirection('name')])) }}">
+                  ↕ </a></th>
             <th>Spesifikasi</th>
             <th>Kategori</th>
             <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
-        @foreach($categories as $category)
-          @foreach($category->products as $index => $product)
+        @foreach($products as $product)
             <tr>
-                <td>{{ $index + 1 }}</td>
+                <td>{{ $product->id }}</td>
                 <td>
                     <img src="{{ asset('storage/' . $product->image) }}" alt="Gambar Produk" style="width: 100px; height: auto;">
                 </td>
                 <td>{{ $product->name }}</td>
                 <td>{{ Str::limit($product->specifications, 100) }}</td>
-                <td>{{ $category->name }}</td>
+                <td>{{ $product->category->name ?? '-' }}</td>
                 <td>
                     <a href="{{ route('admin.editProduct', $product->id) }}" class="btn btn-sm btn-warning">✏ Edit</a>
                     <a href="#" class="btn btn-sm btn-danger" onclick="hapusData({{ $product->id }})">🗑 Hapus</a>
@@ -86,7 +103,6 @@
                     </form>
                 </td>
             </tr>
-          @endforeach
         @endforeach
       </tbody>
     </table>

@@ -269,10 +269,10 @@ button {
   background-color: #f9f9f9;
 }
 th:first-child {
-  width: 55px;
+  width: 65px;
 }
 th:nth-child(2) {
-  width: 100px;
+  width: 110px;
 }
 .btn {
   padding: 6px 12px;
@@ -355,4 +355,20 @@ th:nth-child(2) {
 .search-button-admin:hover {
   background-color: #002a5c;
   color: #fff;
+}
+
+th {
+  position: relative; 
+  padding-right: 30px; 
+}
+
+.sort-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  position: absolute;
+  top: 46%;
+  right: 7px;
+  transform: translateY(-50%);
+  font-size: large;
 }

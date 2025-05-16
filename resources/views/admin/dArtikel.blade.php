@@ -64,21 +64,31 @@
       </form>
     </div>
 
+    @php
+    $currentSort = request('sort');
+    $currentDirection = request('direction', 'asc');
+
+    $toggleDirection = fn($col) => ($currentSort === $col && $currentDirection === 'asc') ? 'desc' : 'asc';
+    @endphp
+
     <table class="table">
       <thead>
         <tr>
-            <th>No</th>
-            <th>Tanggal</th>
+            <th>No <a class="sort-link" href="{{ route('admin.dArtikel', array_merge(request()->all(), ['sort' => 'id', 'direction' => $toggleDirection('id')])) }}">
+                  ↕ </a></th>
+            <th>Tanggal <a class="sort-link" href="{{ route('admin.dArtikel', array_merge(request()->all(), ['sort' => 'created_at', 'direction' => $toggleDirection('created_at')])) }}">
+                  ↕ </a></th>
             <th>Gambar</th>
-            <th>Judul</th>
+            <th>Judul <a class="sort-link" href="{{ route('admin.dArtikel', array_merge(request()->all(), ['sort' => 'title', 'direction' => $toggleDirection('title')])) }}">
+                  ↕ </a></th>
             <th>Konten</th>
             <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
-        @foreach($artikels as $index => $article)
+        @foreach($artikels as $article)
             <tr>
-                <td>{{ $index + 1 }}</td>
+                <td>{{ $article->id }}</td>
                 <td>{{ $article->created_at->format('d-M-Y') }}</td>
                 <td>
                     <img src="{{ asset('storage/' . $article->image) }}" alt="Gambar Artikel" style="width: 100px; height: auto;">

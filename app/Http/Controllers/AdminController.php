@@ -175,6 +175,16 @@ class AdminController extends Controller
                 ->orWhere('content', 'like', '%' . $search . '%');
         }
 
+        $allowedSorts = ['id', 'created_at', 'title'];
+        $sort = $request->get('sort');
+        $direction = $request->get('direction', 'asc');
+
+        if (in_array($sort, $allowedSorts)) {
+            $query->orderBy($sort, $direction);
+        } else {
+            $query->latest();
+        }
+
         $artikels = $query->latest()->get();
         return view('admin.dArtikel', compact('artikels'));
     }
@@ -184,9 +194,34 @@ class AdminController extends Controller
         return view('admin.add-article', compact('artikels'));
     }
 
-    public function dProduct() {
+    public function dProduct(Request $request){
+        $query = Product::query();
+
+        if ($request->has('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', '%' . $search . '%')
+                ->orWhere('specifications', 'like', '%' . $search . '%')
+                ->orWhereHas('category', function ($q2) use ($search) {
+                   $q2->where('name', 'like', '%' . $search . '%');
+                });
+            });
+        }
+
+        $allowedSorts = ['id', 'name'];
+        $sort = $request->get('sort');
+        $direction = $request->get('direction', 'asc');
+
+        if (in_array($sort, $allowedSorts)) {
+            $query->orderBy($sort, $direction);
+        } else {
+            $query->latest();
+        }
+
+        $products = $query->with('category')->latest()->get();
         $categories = Category::with('products')->get();
-        return view('admin.dProduct', compact('categories'));
+
+        return view('admin.dProduct', compact('products', 'categories'));
     }
 
     public function editProduct($id) {
