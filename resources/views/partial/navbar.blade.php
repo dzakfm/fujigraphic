@@ -17,33 +17,64 @@
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('home') ? 'custom-active' : '' }}" href="{{ route('home') }}">Beranda</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{ request()->routeIs('profile') ? 'custom-active' : '' }}"
-                      href="{{ route('profile') }}" id="tentangKamiLink">
-                        Tentang Kami
-                    </a>
-                    <ul style="text-align: center;" class="dropdown-menu" aria-labelledby="tentangKamiDropdown">
-                        <li><a class="dropdown-item {{ request()->routeIs('profile') ? 'active' : '' }}" href="{{ route('profile') }}">Tentang Kami</a></li>
-                        <li><a class="dropdown-item {{ request()->routeIs('faq') ? 'active' : '' }}" href="{{ route('faq') }}">FAQ</a></li>
-                        <li><a class="dropdown-item {{ request()->routeIs('sdank') ? 'active' : '' }}" href="{{ route('sdank') }}">S&K</a></li>
-                    </ul>
-                </li>
+             <li class="nav-item dropdown">
+  <a 
+  class="nav-link dropdown-toggle {{ request()->routeIs('profile') ? 'custom-active' : '' }}" 
+  href="#" 
+  id="tentangKamiDropdown" 
+  role="button" 
+  data-bs-toggle="dropdown" 
+  aria-expanded="false"
+>
+  Tentang Kami
+</a>
+
+<ul 
+  class="dropdown-menu minimal-dropdown shadow-sm border-0 rounded-3 animate__animated animate__fadeIn text-center" 
+  aria-labelledby="tentangKamiDropdown"
+>
+  <li>
+    <a class="dropdown-item {{ request()->routeIs('profile') ? 'active' : '' }}" href="{{ route('profile') }}">
+      <i class="bi bi-info-circle me-2 text-primary"></i> Tentang Kami
+    </a>
+  </li>
+  <li>
+    <a class="dropdown-item {{ request()->routeIs('faq') ? 'active' : '' }}" href="{{ route('faq') }}">
+      <i class="bi bi-question-circle me-2 text-warning"></i> FAQ
+    </a>
+  </li>
+  <li>
+    <a class="dropdown-item {{ request()->routeIs('sdank') ? 'active' : '' }}" href="{{ route('sdank') }}">
+      <i class="bi bi-file-earmark-text me-2 text-success"></i> S&K
+    </a>
+  </li>
+</ul>
+
+
                 <!-- Dropdown Produk dengan kategori dinamis -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{ request()->routeIs('product') ? 'custom-active' : '' }}"
-                    href="{{ route('product') }}">
-                    Produk
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="produkDropdown" style="text-align:center;">
-                        @foreach($categories as $category)
-                            <li>
-                                <a class="dropdown-item" href="{{ route('product', ['category' => $category->id]) }}">
-                                    {{ strtoupper($category->name) }}
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </li>
+               <li class="nav-item dropdown">
+  <a 
+    class="nav-link dropdown-toggle {{ request()->routeIs('product') ? 'custom-active' : '' }}" 
+    href="{{ route('product') }}" 
+    id="produkDropdown" 
+    role="button" 
+    data-bs-toggle="dropdown" 
+    aria-expanded="false"
+  >
+    Produk
+  </a>
+  <ul class="dropdown-menu minimal-dropdown text-center" aria-labelledby="produkDropdown">
+    @foreach($categories as $category)
+      <li>
+        <a class="dropdown-item" href="{{ route('product', ['category' => $category->id]) }}">
+          {{ strtoupper($category->name) }}
+        </a>
+      </li>
+    @endforeach
+  </ul>
+</li>
+
+
 
                 <!-- Menu lainnya -->
                 <li class="nav-item">

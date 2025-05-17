@@ -688,7 +688,7 @@ footer a:hover {
     padding-bottom: 5px;
 }
 
-.sort-kategori:hover, 
+.sort-kategori:hover,
 .sort-kategori:focus {
     border: 2px solid #00318b;
     box-shadow: 0 0 5px rgba(40, 53, 167, 0.5);
@@ -706,8 +706,47 @@ footer a:hover {
     margin-top: 10%;
 }
 
-.kembali, 
+.kembali,
 .kembali:hover {
     background: #555;
     color: white;
+}
+
+/* Dropdown minimalis dengan border melengkung */
+.minimal-dropdown {
+    background-color: #fff;
+    padding: 0.5rem;
+    min-width: 200px;
+    border-radius: 0.75rem;
+    /* ✔️ Lengkung ringan */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+    transform: translateX(-15%);
+}
+
+/* Item dropdown */
+.minimal-dropdown .dropdown-item {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+    border-radius: 10rem;
+    transition: all 0.2s ease;
+}
+
+/* Hover efek */
+.minimal-dropdown .dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #b51e17;
+}
+
+/* Aktif (current route) */
+.minimal-dropdown .dropdown-item.active {
+    background-color: #e7f1ff;
+    font-weight: 600;
+    color: #b51e17;
+}
+
+/* Custom underline nav active */
+.custom-active {
+    color: #b51e17;
+    font-weight: 500;
+    border-bottom: 2px solid #b51e17;
 }
