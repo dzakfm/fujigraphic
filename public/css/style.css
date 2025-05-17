@@ -759,3 +759,13 @@ footer a:hover {
     margin-left: auto;
     margin-right: auto;
 }
+
+.ijobtn, .ijobtn:hover, .ijobtn:focus {
+    background-color: #0d922a;
+    color: white;
+}
+
+.kngbtn, .kngbtn:hover, .kngbtn:focus {
+    background-color: #eeff00;
+    color: #1c1c1c;
+}

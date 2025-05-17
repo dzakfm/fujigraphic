@@ -7,13 +7,15 @@
     <title>Edit Produk</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <style>
         .cke_notifications_area, .cke_notification {
             display: none !important;
         }
     </style>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body>
@@ -73,7 +75,7 @@
         </div>
         </form>
 
-        <a href="{{ route('admin.dProduct') }}" class="btn btn-secondary mt-4">Kembali</a>
+        <a href="{{ route('admin.dProduct') }}" class="btn btn-secondary kembali mt-4">Kembali</a>
     </main>
 
 
