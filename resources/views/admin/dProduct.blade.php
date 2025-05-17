@@ -77,6 +77,7 @@
         <input type="hidden" name="sort" value="{{ request('sort') }}">
         <input type="hidden" name="direction" value="{{ request('direction') }}">
     </div>
+    </form>
 
     @php
     $currentSort = request('sort');
