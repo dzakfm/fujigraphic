@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     // ambil data umum untuk halaman depan, misalnya:
     $artikels = Artikel::latest()->take(6)->get();
-    $products = Product::latest()->take(6)->get();
+    $products = Product::where('category_id', 1)->latest()->take(6)->get();
     return view('home', compact('artikels', 'products'));
 }
 
