@@ -50,6 +50,7 @@
     Route::get('/admin/artikel', [AdminController::class, 'artikelList'])->name('admin.articles');
 
     //routes product
+    Route::get('/produk', [ProductController::class, 'product'])->name('product');
     Route::get('/product/{id}', [ProductController::class, 'detail'])->name('product.detailProduct');
     Route::get('/admin/dProduct', [AdminController::class, 'dProduct'])->name('admin.dProduct');
     Route::get('/admin/product/{id}/edit', [AdminController::class, 'editProduct'])->name('admin.editProduct');

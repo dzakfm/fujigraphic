@@ -700,3 +700,14 @@ footer a:hover {
     margin-right: 10px;
     font-weight: 600;
 }
+
+.pesan-now {
+    margin-left: 30%;
+    margin-top: 10%;
+}
+
+.kembali, 
+.kembali:hover {
+    background: #555;
+    color: white;
+}

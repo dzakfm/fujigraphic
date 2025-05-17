@@ -1,3 +1,7 @@
+@php
+    use Illuminate\Support\Str;
+@endphp
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -46,32 +50,33 @@
       Hasil pencarian untuk: <em>"{{ request('search') ?? $categories->firstWhere('id', request('category'))->name ?? '' }}"</em>
     </h2>
     
-@php
-$grouped = $products->groupBy('category.name');
-@endphp
+    @php
+    $grouped = $products->groupBy('category.name');
+    @endphp
 
-@forelse($grouped as $categoryName => $group)
-  <section class="mb-5 my-5">
-    <h2 class="mb-4">{{ $categoryName ?? 'Tanpa Kategori' }}</h2>
-    <div class="row g-4">
-      @foreach($group as $product)
-        <div class="col-md-4">
-          <div class="card h-100 text-center p-3">
-            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">{{ $product->name }}</h5>
-              <a href="{{ route('product.detailProduct', ['id' => $product->id]) }}" class="btn btn-customprd mt-auto">
-                Baca Selengkapnya
-              </a>
+    @forelse($grouped as $categoryName => $group)
+      @php $slug = Str::slug($categoryName, '-') @endphp
+      <section id="kategori-{{ $slug }}" class="mb-5 my-5">
+        <h2 class="mb-4">{{ $categoryName ?? 'Tanpa Kategori' }}</h2>
+        <div class="row g-4">
+          @foreach($group as $product)
+            <div class="col-md-4">
+              <div class="card h-100 text-center p-3">
+                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">{{ $product->name }}</h5>
+                  <a href="{{ route('product.detailProduct', ['id' => $product->id]) }}" class="btn btn-customprd mt-auto">
+                    Baca Selengkapnya
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
+          @endforeach
         </div>
-      @endforeach
-    </div>
-  </section>
-@empty
-  <p class="text-muted">Produk tidak ditemukan.</p>
-@endforelse
+      </section>
+    @empty
+      <p class="text-muted">Produk tidak ditemukan.</p>
+    @endforelse
 
 
     @else

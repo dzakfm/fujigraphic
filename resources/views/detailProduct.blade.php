@@ -18,19 +18,17 @@
             <!-- Kolom kiri: Gambar -->
             <div class="col-md-3 text-center mb-5 mt-5">
                 <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}" class="img-fluid">
+                <p>Kategori : {{ $product->category->name ?? '-' }}</p>
             </div>
             <!-- Kolom kanan: Judul & Konten -->
             <div class="col-md-9 mt-md-5">
                 <h2>{{ $product->title }}</h2>
                 <p>{!! $product->specifications !!}</p> <!-- Menjaga format HTML -->
-                <button>Pesan/Hubungi Kami</button>
-            </div>
-            <div class="col-md-9 mt-md-9">
-                <p>Kategori : {{ $product->category->name ?? '-' }}</p>
+                <button class="btn btn-outline-primary pesan-now">Pesan/Hubungi Kami</button>
             </div>
         </div>
         
-        <a href="{{ route('product') }}" class="btn btn-danger mt-4">Kembali</a>
+        <a href="{{ route('product') }}" class="btn btn-danger kembali mt-4">Kembali</a>
     </main>
 
 

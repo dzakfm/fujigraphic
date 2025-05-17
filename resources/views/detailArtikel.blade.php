@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <a href="{{ route('artikel') }}" class="btn btn-danger mt-4">Kembali</a>
+        <a href="{{ route('artikel') }}" class="btn btn-danger kembali mt-4">Kembali</a>
     </main>
 
 

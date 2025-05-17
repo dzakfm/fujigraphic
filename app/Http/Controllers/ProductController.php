@@ -8,13 +8,35 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    public function product()
+    public function product(Request $request)
     {
-        // Ambil semua kategori beserta produk-produknya
+        // Ambil semua kategori dengan relasi produk
         $categories = Category::with('products')->get();
 
-        // Kirim data ke view
-        return view('product', compact('categories'));
+        // Buat query awal produk
+        $query = Product::query();
+
+        // Cek apakah ada parameter pencarian
+        if ($request->filled('search')) {
+            $query->where(function ($q) use ($request) {
+                $q->where('name', 'like', '%' . $request->search . '%')
+                  ->orWhere('specifications', 'like', '%' . $request->search . '%');
+            });
+        }
+
+        // Filter berdasarkan kategori jika ada
+        if ($request->filled('category')) {
+            $query->where('category_id', $request->category);
+        }
+
+        // Ambil hasil produk
+        $products = $query->get();
+
+        // Kirim semua data ke view
+        return view('product', [
+            'categories' => $categories,
+            'products' => $products,
+        ]);
     }
 
     public function show($id)
