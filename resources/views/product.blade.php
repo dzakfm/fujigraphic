@@ -66,7 +66,7 @@
           @foreach($group as $product)
             <div class="col-md-4">
               <div class="card h-100 text-center p-3">
-                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="card-img-top img-product" style="height: 200px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title">{{ $product->name }}</h5>
                   <a href="{{ route('product.detailProduct', ['id' => $product->id]) }}" class="btn btn-customprd mt-auto">

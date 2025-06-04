@@ -7,13 +7,15 @@
     <title>Tambah Produk</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <style>
         .cke_notifications_area, .cke_notification {
             display: none !important;
         }
     </style>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body>
@@ -28,7 +30,7 @@
                 <form id="form-add-category" action="{{ route('admin.storeCategory') }}" method="POST">
                     @csrf
                     <input type="text" name="name" class="mb-2" placeholder="Nama Kategori" required>
-                    <a href="javascript:void(0);" class="btn btn-sm btn-success d-flex align-items-center justify-content-center" style="width: 51%; height: 2.1rem; margin-left: 1.8rem;" onclick="submitCategory()"><strong>Tambah Kategori</strong></a>
+                    <a href="javascript:void(0);" class="btn btn-sm btn-success d-flex align-items-center justify-content-center ijobtn" style="width: 65%; height: 2.1rem; margin-left: 1rem; font-size: 15px;" onclick="submitCategory()"><strong>Tambah Kategori</strong></a>
                     <p></p>
                     @if(session('success'))
                       <div class="alert alert-success">
@@ -46,7 +48,7 @@
                         <form id="edit-category-{{ $category->id }}" action="{{ route('admin.updateCategory', $category->id) }}" method="POST" class="d-flex me-2">
                         @csrf @method('PUT')
                             <input type="text" name="name" value="{{ $category->name }}" required>
-                            <a href="javascript:void(0);" class="btn btn-sm btn-warning ms-3" onclick="document.getElementById('edit-category-{{ $category->id }}').submit()">✏ Edit</a>
+                            <a href="javascript:void(0);" class="btn btn-sm btn-warning ms-3 kngbtn" onclick="document.getElementById('edit-category-{{ $category->id }}').submit()">✏ Edit</a>
                         </form>
                         <form id="delete-category-{{ $category->id }}" action="{{ route('admin.deleteCategory', $category->id) }}" method="POST" class="d-flex">
                         @csrf @method('DELETE')
@@ -107,7 +109,7 @@
         </div>
         </form>
 
-        <a href="{{ route('admin.dProduct') }}" class="btn btn-secondary mt-4">Kembali</a>
+        <a href="{{ route('admin.dProduct') }}" class="btn btn-secondary kembali mt-4">Kembali</a>
     </main>
 
 

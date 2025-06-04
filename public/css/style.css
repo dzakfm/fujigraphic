@@ -175,7 +175,7 @@ main {
 }
 
 .product-card img {
-    width: 100%;
+    width: 80%;
     border-radius: 10px;
     height: 200px;
     object-fit: cover;
@@ -765,4 +765,28 @@ footer a:hover {
 
 .whatsapp-float:hover {
     transform: scale(1.1);
+}
+
+.img-product {
+    width: 65%;
+    height: 200px;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ijobtn,
+.ijobtn:hover,
+.ijobtn:focus {
+    background-color: #0d922a;
+    color: white;
+}
+
+.kngbtn,
+.kngbtn:hover,
+.kngbtn:focus {
+    background-color: #eeff00;
+    color: #1c1c1c;
+
 }
