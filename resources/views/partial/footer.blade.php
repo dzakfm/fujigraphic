@@ -4,9 +4,9 @@
             <!-- Kolom Kontak Kami -->
             <div class="col-md-4">
                 <h5>Kontak Kami</h5>
-                <p>Jl. Contoh No.123, Kota Lampung</p>
-                <p>Email: info@example.com</p>
-                <p>Telepon: (0721) 123456</p>
+                <p>Menteng Atas Barat,Ps. Manggarai - Setiabudi Jakarta Selatan, DKI Jakarta 12960</p>
+                <p>Email: bagus.fujigraphic@gmail.com</p>
+                <p>Telepon: 081932018666</p>
             </div>
 
             <!-- Kolom Ikuti Kami -->
@@ -33,6 +33,6 @@
         </div>
 
         <hr class="my-4 border-white">
-        <p>&copy; 2025 Perusahaan Anda. All rights reserved.</p>
+        <p>&copy; 2025 Xero Copy. All rights reserved.</p>
     </div>
 </footer>

@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="{{ asset('images/fujigraphicjakarta.png') }}" alt="Logo" height="40">
+            <img src="{{ asset('images/fujigraphicjakarta.png') }}" alt="Logo" height="60">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

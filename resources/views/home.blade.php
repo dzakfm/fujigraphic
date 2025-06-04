@@ -1,10 +1,13 @@
+
+@extends('layouts.app')
+
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fuji Graphic Jakarta</title>
+    <title>Xero Copy</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
@@ -26,7 +29,7 @@
         <!-- Header di atas gambar -->
         <header class="hero-section">
             <div class="container">
-                <h1 class="display-4">Fuji Graphic Jakarta</h1>
+                <h1 class="display-4">Xero Copy</h1>
                 <p class="lead text-danger fw-bold">Sewa Praktis, Cetak Tanpa Batas!!!</p>
             </div>
         </header>

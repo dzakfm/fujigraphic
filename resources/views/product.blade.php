@@ -2,6 +2,8 @@
     use Illuminate\Support\Str;
 @endphp
 
+@extends('layouts.app')
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
