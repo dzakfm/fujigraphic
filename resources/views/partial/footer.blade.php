@@ -13,13 +13,13 @@
             <div class="col-md-4">
                 <h5>Ikuti Kami</h5>
                 <div class="d-flex justify-content-center">
-                    <a href="https://www.facebook.com/username" class="text-white mx-2" target="_blank">
+                    <a href="https://www.facebook.com/FujigraphicJKT" class="text-white mx-2" target="_blank">
                         <i class="fab fa-facebook fa-2x"></i>
                     </a>
-                    <a href="https://twitter.com/username" class="text-white mx-2" target="_blank">
+                    <a href="https://x.com/fujigraphicJKT" class="text-white mx-2" target="_blank">
                         <i class="fab fa-twitter fa-2x"></i>
                     </a>
-                    <a href="https://www.instagram.com/username" class="text-white mx-2" target="_blank">
+                    <a href="https://www.instagram.com/fujigraphicjakarta/" class="text-white mx-2" target="_blank">
                         <i class="fab fa-instagram fa-2x"></i>
                     </a>
                 </div>
@@ -33,6 +33,6 @@
         </div>
 
         <hr class="my-4 border-white">
-        <p>&copy; 2025 Xero Copy. All rights reserved.</p>
+        <p>&copy; 2025 Fuji Graphic Jakarta. All rights reserved.</p>
     </div>
 </footer>

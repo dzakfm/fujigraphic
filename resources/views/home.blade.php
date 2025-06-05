@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Xero Copy</title>
+    <title>Fuji Graphic Jakarta</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
@@ -29,7 +29,7 @@
         <!-- Header di atas gambar -->
         <header class="hero-section">
             <div class="container">
-                <h1 class="display-4">Xero Copy</h1>
+                <h1 class="display-4">Fuji Graphic Jakarta</h1>
                 <p class="lead text-danger fw-bold">Sewa Praktis, Cetak Tanpa Batas!!!</p>
             </div>
         </header>
@@ -150,32 +150,26 @@
                         <div class="why-points row text-center mt-4 gx-5">
                             <div class="col-md-4 mb-4 px-5">
                                 <img src="{{ asset('images/icons/1.png') }}" alt="All-in-One" class="why-icon mb-2">
-                                <i class="fas fa-file-invoice fa-2x text-danger mb-2"></i>
                                 <p><strong>All-in-One System</strong><br>Satu invoice untuk semua kebutuhan.</p>
                             </div>
                             <div class="col-md-4 mb-4 px-5">
                                 <img src="{{ asset('images/icons/2.png') }}" alt="Suku Cadang Asli" class="why-icon mb-2">
-                                <i class="fas fa-cogs fa-2x text-danger mb-2"></i>
                                 <p><strong>Suku Cadang Asli</strong><br>Consumables Fuji Xerox asli & berkualitas.</p>
                             </div>
                             <div class="col-md-4 mb-4 px-5">
                                 <img src="{{ asset('images/icons/3.png') }}" alt="Layanan Cepat" class="why-icon mb-2">
-                                <i class="fas fa-shipping-fast fa-2x text-danger mb-2"></i>
                                 <p><strong>Layanan Cepat</strong><br>Respon maksimal 1 hari dari teknisi profesional.</p>
                             </div>
                             <div class="col-md-4 mb-4 px-5">
                                 <img src="{{ asset('images/icons/4.png') }}" alt="Bantuan Lengkap" class="why-icon mb-2">
-                                <i class="fas fa-headset fa-2x text-danger mb-2"></i>
                                 <p><strong>Bantuan Lengkap</strong><br>Dukungan telepon, panduan, dan video tutorial.</p>
                             </div>
                             <div class="col-md-4 mb-4 px-5">
                                 <img src="{{ asset('images/icons/5.png') }}" alt="Backup Toner" class="why-icon mb-2">
-                                <i class="fas fa-box-open fa-2x text-danger mb-2"></i>
                                 <p><strong>Backup Toner & Drum</strong><br>Tersedia jika dibutuhkan, tanpa biaya tambahan.</p>
                             </div>
                             <div class="col-md-4 mb-4 px-5">
                                 <img src="{{ asset('images/icons/6.png') }}" alt="Solusi Cerdas" class="why-icon mb-2">
-                                <i class="fas fa-lightbulb fa-2x text-danger mb-2"></i>
                                 <p><strong>Solusi Cerdas</strong><br>Hemat, fleksibel & praktis untuk kebutuhan kantor modern.</p>
                             </div>
                         </div>
