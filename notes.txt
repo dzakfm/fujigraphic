@@ -1,3 +1,0 @@
-artikel detail =
-kurang nama email untuk komentar
-jumlah komentar belum interaktif
