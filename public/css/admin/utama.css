@@ -406,3 +406,34 @@ th {
     box-shadow: 0 0 5px rgba(40, 53, 167, 0.5);
     outline: none;
 }
+
+.tabelBantuan {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.tabelBantuan h2 {
+  margin-bottom: 25px;
+  font-size: 24px;
+  color: #333;
+}
+
+.bantuan-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 20px;
+}
+
+.bantuan-table td {
+  vertical-align: top;
+}
+
+.bantuan-table iframe {
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}

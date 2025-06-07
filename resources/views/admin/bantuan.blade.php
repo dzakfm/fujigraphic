@@ -51,16 +51,63 @@
   <div class="nav-overlay"></div>
 </div>
 
-<div class="center-wrapper">
+
 <main class="main-content"> 
-   <div class="tabelPengunjung">
+   <div class="tabelBantuan">
     <h2>Menu Bantuan</h2>
-    <table class="table">
-      1. cara pakai
+    <table class="bantuan-table">
+      <tr>
+        <td><strong>Cara Menambahkan Produk</strong></td>
+        <td><strong>Cara Menambahkan Artikel</strong></td>
+      </tr>
+      <tr>
+        <td>
+          <iframe width="300" height="170"
+            src="https://youtu.be/XBYg80db5SI"
+            title="Panduan Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </td>
+        <td>
+          <iframe width="300" height="170"
+            src="https://youtu.be/YFDQ84sVhsc"
+            title="Panduan Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Cara Edit & Hapus Produk</strong></td>
+        <td><strong>Cara Edit & Hapus Artikel</strong></td>
+      </tr>
+      <tr>
+        <td>
+          <iframe width="300" height="170"
+            src="https://youtu.be/LoWWw4vVjJo"
+            title="Panduan Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </td>
+        <td>
+          <iframe width="300" height="170"
+            src="https://youtu.be/Dfxxk_Fqf8k"
+            title="Panduan Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </td>
+      </tr>
     </table>
   </div>
  </div>
-</div>
+
 <script>
   console.log('JS Loaded');
 </script>
