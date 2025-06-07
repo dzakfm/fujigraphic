@@ -64,7 +64,7 @@
       <tr>
         <td>
           <iframe width="300" height="170"
-            src="https://youtu.be/XBYg80db5SI"
+            src="https://www.youtube.com/embed/XBYg80db5SI"
             title="Panduan Video"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -73,7 +73,7 @@
         </td>
         <td>
           <iframe width="300" height="170"
-            src="https://youtu.be/YFDQ84sVhsc"
+            src="https://www.youtube.com/embed/YFDQ84sVhsc"
             title="Panduan Video"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -88,7 +88,7 @@
       <tr>
         <td>
           <iframe width="300" height="170"
-            src="https://youtu.be/LoWWw4vVjJo"
+            src="https://www.youtube.com/embed/LoWWw4vVjJo"
             title="Panduan Video"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -97,7 +97,7 @@
         </td>
         <td>
           <iframe width="300" height="170"
-            src="https://youtu.be/Dfxxk_Fqf8k"
+            src="https://www.youtube.com/embed/Dfxxk_Fqf8k"
             title="Panduan Video"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
