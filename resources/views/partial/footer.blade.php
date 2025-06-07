@@ -3,9 +3,9 @@
         <div class="row">
             <!-- Kolom Kontak Kami -->
             <div class="col-md-4">
-                <h5>Kontak Kami</h5>
+                <h5><a href="{{ route('contact') }}">Kontak Kami</a></h5>
                 <p>Menteng Atas Barat,Ps. Manggarai - Setiabudi Jakarta Selatan, DKI Jakarta 12960</p>
-                <p>Email: bagus.fujigraphic@gmail.com</p>
+                <p>Email: cs.fujigraphic@gmail.com</p>
                 <p>Telepon: 081932018666</p>
             </div>
 
@@ -27,7 +27,7 @@
 
             <!-- Kolom Tentang Kami -->
             <div class="col-md-4">
-                <h5>Tentang Kami</h5>
+                <h5><a href="{{ route('profile') }}">Tentang Kami</a></h5>
                 <p>Kami menyediakan layanan terbaik dan terpercaya untuk kebutuhan Anda.</p>
             </div>
         </div>

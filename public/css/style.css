@@ -124,11 +124,30 @@ main {
 
 /* Client Logo Styling */
 .clients img {
-    max-width: 150px;
-    height: auto;
+    max-width: 170px;
+    height: 40px;
     margin: 10px;
     opacity: 0.8;
     transition: transform 0.3s, opacity 0.3s;
+}
+
+.clients img:nth-child(7) {
+    margin-top: 30px;
+}
+
+.clients img:nth-child(8) {
+    margin-top: 30px;
+}
+
+
+.clients img:nth-child(9) {
+    max-width: 220px;
+    height: 90px;
+}
+
+
+.clients img:nth-child(10) {
+    margin-top: 30px;
 }
 
 .clients img:hover {

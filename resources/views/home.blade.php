@@ -57,13 +57,19 @@
 
     <section class="clients text-center py-5" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
-            <h2 class="our">Our Clients</h2>
-            <p>We have been working with some Fortune 50+ clients</p>
+            <h2 class="our">Klien Kami</h2>
+            <p>Kami telah menjalin kerja sama dengan 80+ klien terkemuka dan terpercaya.</p>
             <div class="d-flex justify-content-center gap-4 flex-wrap">
-                <img src="{{ asset('images/clientsimg/taspen1.jpg') }}" alt="Client 1" />
-                <img src="client2.png" alt="Client 2" />
-                <img src="client3.png" alt="Client 3" />
-                <img src="client4.png" alt="Client 4" />
+                <img src="{{ asset('images/clientsimg/taspen.png') }}" alt="Client 1" />
+                <img src="{{ asset('images/clientsimg/pefindo1.png') }}" alt="Client 2" />
+                <img src="{{ asset('images/clientsimg/gnv.png') }}" alt="Client 3" />
+                <img src="{{ asset('images/clientsimg/pefindo2.png') }}" alt="Client 4" />
+                <img src="{{ asset('images/clientsimg/mpi.png') }}" alt="Client 5" />
+                <img src="{{ asset('images/clientsimg/bpr.png') }}" alt="Client 6"/>
+                <img src="{{ asset('images/clientsimg/kinema.png') }}" alt="Client 7" />
+                <img src="{{ asset('images/clientsimg/wika.png') }}" alt="Client 8" />
+                <img src="{{ asset('images/clientsimg/jayamix.png') }}" alt="Client 9" />
+                <img src="{{ asset('images/clientsimg/wiko.png') }}" alt="Client 10" />
             </div>
         </div>
     </section>
