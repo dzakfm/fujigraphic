@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fujigraphic</title>
+  <link rel="icon" href="{{ asset('images/fgj.png') }}" type="image/x-icon"/>
+  <title>Fujigraphic Jakarta</title>
   <link rel="stylesheet" href="../css/admin/login.css">
 
 </head>

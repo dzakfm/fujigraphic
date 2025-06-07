@@ -5,7 +5,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fuji Graphic Jakarta</title>
+    <link rel="icon" href="{{ asset('images/fgj.png') }}" type="image/x-icon"/>
+    <title>Fujigraphic Jakarta</title>
 
     <!-- Bootstrap CSS -->
     <link
