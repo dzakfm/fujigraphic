@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{{ asset('images/fgj.png') }}" type="image/x-icon"/>
     <title>Fujigraphic Jakarta</title>
     <!-- Bootstrap CSS -->
@@ -152,7 +152,7 @@
                 <div class="text">
                     <h2 style="text-align: center;" class="text-center mb-4">Mengapa Memilih Fujigraphic?</h2>
                     <p class="text-center mb-5">
-                        ‌Sewa satu mesin fotocopy dari Fujigraphic, dan Anda tidak perlu lagi membeli printer, scanner, atau fax. Semua unit sudah terhubung ke Wi-Fi, siap digunakan sebagai printer & scanner langsung dari komputer atau laptop Anda.
+                        â€ŒSewa satu mesin fotocopy dari Fujigraphic, dan Anda tidak perlu lagi membeli printer, scanner, atau fax. Semua unit sudah terhubung ke Wi-Fi, siap digunakan sebagai printer & scanner langsung dari komputer atau laptop Anda.
                     </p>
                         <div class="why-points row text-center mt-4 gx-5">
                             <div class="col-md-4 mb-4 px-5">
@@ -183,7 +183,7 @@
                         <p class="text-center mt-4">
                         Dengan kantor pusat di Jakarta, kami siap memberikan layanan cepat & tepat waktu untuk setiap pelanggan.</br>
                            </br>
-                        🔄 Hemat, fleksibel, dan praktis Sewa Mesin Fotocopy dari kami adalah solusi cerdas untuk kebutuhan kantor modern Anda.</br>
+                        ðŸ”„ Hemat, fleksibel, dan praktis Sewa Mesin Fotocopy dari kami adalah solusi cerdas untuk kebutuhan kantor modern Anda.</br>
                         </p>
                         <div class="text-center mt-3">
                             <a href="{{ route('profile') }}" class="btn btn-outline-primary">Selengkapnya Tentang Kami</a>
@@ -193,16 +193,17 @@
         </div>
     </section>
 
-    <div class="product-container pb-5" data-aos="fade-up" data-aos-duration="800">
+    <section data-aos="fade-up" data-aos-duration="800">
+    <div class="product-container pb-5">
   <h2 class="our">Artikel</h2>
 
   <!-- Tambahan wrapper Swiper -->
   <div class="swiper artikel-swiper">
-    <div class="product-wrapper row swiper-wrapper">
+    <div class="swiper-wrapper">
       @php use Illuminate\Support\Str; @endphp
 
       @foreach($artikels as $artikel)
-      <div class="swiper-slide col-md-4 mb-4" data-aos="flip-up" data-aos-duration="800">
+      <div class="swiper-slide mb-4" data-aos="flip-up" data-aos-duration="800">
         <div class="artikel-card d-flex flex-column h-100 p-3 border rounded bg-white">
           <img src="{{ asset('storage/' . $artikel->image) }}" alt="{{ $artikel->name }}" class="img-fluid mb-2" style="max-height: 200px; object-fit: cover" />
           <h3 class="h5">{{ $artikel->title }}</h3>
@@ -219,11 +220,13 @@
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
   </div>
+ 
 
   <div class="text-center mt-3">
     <a href="{{ route('artikel') }}" class="btn btn-outline-primary">Artikel Lainnya</a>
   </div>
 </div>
+ </section>
 
     @include('partial.footer')
 

@@ -191,6 +191,8 @@ main {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
     text-align: center;
+    flex: 0 0 calc(33.33% - 20px);
+    text-align: center;
 }
 
 .product-card img {
@@ -198,6 +200,7 @@ main {
     border-radius: 10px;
     height: 200px;
     object-fit: cover;
+    max-width: 100%;
 }
 
 .product-card h3 {
@@ -339,25 +342,6 @@ main {
     /* Produk tetap dalam satu baris */
     gap: 20px;
     transition: transform 0.5s ease-in-out;
-}
-
-/* Set ukuran setiap produk agar pas */
-.product-card {
-    flex: 0 0 calc(33.33% - 20px);
-    /* Hanya 3 produk yang ditampilkan */
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.product-card img {
-    max-width: 100%;
-    border-radius: 8px;
-    height: 200px;
-    object-fit: cover;
 }
 
 /* Tombol Navigasi */
@@ -642,11 +626,15 @@ footer a:hover {
 .swiper-slide {
     height: auto !important;
     display: flex;
+    padding: 0;
+    margin: 0;
 }
 
 .artikel-card {
-    display: flex;
-    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    width: 80%;
     height: 100%;
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -664,22 +652,44 @@ footer a:hover {
 .swiper-button-prev,
 .swiper-button-next {
     position: absolute;
-    top: 50%;
-    width: 30px;
-    height: 30px;
-    margin-top: -15px;
+    width: 40px;
+    height: 40px;
     z-index: 10;
+    border-radius: 50%;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Geser keluar dari container */
+.swiper-button-prev {
+    left: -50px;
+}
+.swiper-button-next {
+    right: -50px;
+}
+
+/* Hilangkan ikon default swiper */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    display: none;
+}
+
+/* Tambahkan panah sendiri */
+.swiper-button-prev::before,
+.swiper-button-next::before {
+    font-size: 50px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.swiper-button-prev::before {
+    content: '‹';
+    font-size: 50px;
     color: #007bff;
 }
-
-.swiper-button-prev {
-    left: -40px;
-    /* geser keluar kiri */
-}
-
-.swiper-button-next {
-    right: -40px;
-    /* geser keluar kanan */
+.swiper-button-next::before {
+    content: '›';
+    font-size: 50px;
+    color: #007bff;
 }
 
 #searchInput {
