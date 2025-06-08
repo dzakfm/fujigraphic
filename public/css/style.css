@@ -709,6 +709,59 @@ footer a:hover {
     color: #007bff;
 }
 
+@media (min-width: 992px) {
+    .artikel-swiper {
+    position: relative;
+  }
+  .artikel-swiper .swiper-slide {
+    margin-right: 0 !important;
+    padding: 0 !important;
+  }
+
+  .artikel-swiper .swiper-slide .card {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .artikel-swiper .swiper-wrapper {
+    gap: 0 !important;
+  }
+  .artikel-swiper .swiper-button-next {
+    right: -7px; /* Pindahkan panah ke luar ke kanan */
+  }
+  .artikel-swiper .swiper-button-prev {
+    left: -7px; /* Pindahkan panah ke luar ke kiri */
+  }
+  .artikel-swiper .swiper-button-next,
+  .artikel-swiper .swiper-button-prev {
+    /* Gunakan warna yang sesuai dengan tema Anda, contoh: warna merah dari tombol */
+    color: #E53935; 
+    border-radius: 50%; /* Buat menjadi lingkaran */
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* Tambah sedikit bayangan */
+  }
+  .swiper-slide {
+    margin-right: 1px !important;
+    max-width: 100%;
+  }
+}
+
+/* Efek hover pada tombol navigasi Swiper */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: white;               /* Ubah warna ikon (‹ ›) saat hover */
+  transform: scale(1.1);      /* Sedikit membesar */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Tambah bayangan saat hover */
+  transition: all 0.3s ease;
+}
+
+/* Pastikan ikon custom kamu juga ikut berubah warna saat hover */
+.swiper-button-prev:hover::before,
+.swiper-button-next:hover::before {
+  color: #E53935;
+}
+
 #searchInput {
     transition: all 0.3s ease;
 }

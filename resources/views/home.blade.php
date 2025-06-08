@@ -245,27 +245,6 @@
     <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
-  new Swiper('.artikel-swiper', {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    autoplay: {
-    delay: 3000, // waktu jeda tiap slide dalam milidetik (3000 = 3 detik)
-    disableOnInteraction: false, // biar autoplay tetap jalan walau user swipe manual
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-      },
-      992: {
-        slidesPerView: 3,
-      },
-    },
-  });
-
   document.querySelectorAll('.product-swiper').forEach(function (el) {
   new Swiper(el, {
     slidesPerView: 3,
@@ -286,6 +265,34 @@
     },
   });
 });
+
+ const artikelSwiper = document.querySelector('.artikel-swiper');
+  if (artikelSwiper) {
+  new Swiper(artikelSwiper, {
+    slidesPerView: 1,
+    spaceBetween: 15,
+    loop: false,
+    centeredSlides: false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+    delay: 3000, // waktu jeda tiap slide dalam milidetik (3000 = 3 detik)
+    disableOnInteraction: false, // biar autoplay tetap jalan walau user swipe manual
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 3.5,
+        spaceBetween: 15,
+        centeredSlides: false,
+      },
+    },
+  });
+ }
 
 </script>
 </body>
