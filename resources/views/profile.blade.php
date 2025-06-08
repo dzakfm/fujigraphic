@@ -92,7 +92,7 @@
         </div>
     </section>
 
-    <section class="profile-section py-5">
+    <section id="profile" class="profile-section py-5">
       <div class="container">
             <h2 class="text-center fw-bold mb-5" data-aos="fade-left" data-aos-delay="100">List Cabang</h2>
             <div class="d-flex flex-column flex-lg-row gap-4" data-aos="fade-up" data-aos-delay="200">

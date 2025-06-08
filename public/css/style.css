@@ -544,6 +544,23 @@ footer a:hover {
     height: 400px;
 }
 
+@media (max-width: 991.98px) {
+    
+    section.profile-section .d-flex {
+        flex-direction: column !important;
+    }
+    
+    .branch-list,
+    #map-container {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+    }
+    
+    #map {
+        height: 300px !important;
+    }
+}
+
 .branch-details {
     overflow: hidden;
     max-height: 0;
