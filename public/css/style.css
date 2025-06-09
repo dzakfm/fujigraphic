@@ -1,4 +1,5 @@
 body {
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -239,6 +240,8 @@ main {
     text-align: center;
     padding: 60px 0;
     background-color: #f9f9f9;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .why-fujigraphic .container,
